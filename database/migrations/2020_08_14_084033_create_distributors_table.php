@@ -16,7 +16,11 @@ class CreateDistributorsTable extends Migration
         Schema::create('distributors', function (Blueprint $table) {
             $table->id();
             $table->foreignId('doctor_id');
+            $table->string('name');
             $table->timestamps();
+            $table->softDeletes('deleted_at', 0);
+
+            $table->foreign('doctor_id')->references('id')->on('doctors');
         });
     }
 
