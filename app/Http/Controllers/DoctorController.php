@@ -8,6 +8,11 @@ use App\Doctor;
 
 class DoctorController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         //
@@ -15,19 +20,31 @@ class DoctorController extends Controller
 
     public function create()
     {
-        //
+        return view('pages.doctor');
     }
 
     public function store(Request $request)
     {
+        $request->validation([
+            'name' => 'required',
+            'address' => 'required',
+            'zipcode' => 'required'
+        ]);
+
         $user = App\User::findOrFail(1);
 
-        $user->doctor()->create([
-            'user_id' => $user->id,
-            'name' => $request->name,
-            'address' => $request->address,
-            'zipcode' => $request->zipcode
-        ]);
+        try {
+
+            $user->doctor()->create([
+                'user_id' => $user->id,
+                'name' => $request->name,
+                'address' => $request->address,
+                'zipcode' => $request->zipcode
+            ]);
+            
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
     }
 
     public function show($id)

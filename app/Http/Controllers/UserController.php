@@ -6,21 +6,39 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
+    public function index()
+    {
+        //    
+    }
+
+    public function create()
+    {
+        return view('pages.user');
+    }
+    
     public function store(Request $request)
     {
-        $request->validation([
-            'email' => 'required|email',
-            'password' => 'required'
-        ]);
+        $user = App\User::findOrFail($request->user);
+        
+        try {
 
-        $user = new User();
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->save();
+            $doctor = $user->doctor()->create([
+                'user_id' => $user->id,
+                'name' => $user->name
+            ]);
 
-        $doctor->create([
-            'user_id' => $user->id,
-            'name' => $request->name
-        ]);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
+
+    public function approve(Request $request)
+    {
+        
     }
 }

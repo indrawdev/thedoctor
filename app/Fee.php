@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Fee extends Model
 {
+    use SoftDeletes;
+    
     public function doctor()
     {
         return $this->belongsTo('App\Doctor');
@@ -15,5 +18,4 @@ class Fee extends Model
     {
         return $this->hasMany('App\MedicalRecord');
     }
-
 }

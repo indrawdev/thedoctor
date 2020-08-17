@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class OfficerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         //
@@ -13,17 +18,23 @@ class OfficerController extends Controller
 
     public function create()
     {
-        //
+        return view('pages.officer');
     }
 
     public function store(Request $request)
     {
         $doctor = App\Doctor::findOrFail(1);
 
-        $officer = $doctor->officers()->create([
-            'doctor_id' => $doctor->id,
-            'name' => $request->name
-        ]);
+        try {
+            
+            $officer = $doctor->officers()->create([
+                'doctor_id' => $doctor->id,
+                'name' => $request->name
+            ]);
+
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
     }
 
     public function show($id)

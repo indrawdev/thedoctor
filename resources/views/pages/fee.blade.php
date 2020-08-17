@@ -1,6 +1,6 @@
 @extends('layouts/backend')
 
-@section('title', 'Unit')
+@section('title', 'Fee')
 
 
 @section('content')

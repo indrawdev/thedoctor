@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         //
@@ -14,21 +18,27 @@ class ItemController extends Controller
 
     public function create()
     {
-        //
+        return view('pages.item');
     }
 
     public function store(Request $request)
     {
         $doctor = App\Doctor::findOrFail(1);
 
-        $item = $doctor->items()->create([
-            'doctor_id' => $doctor->id,
-            'unit_id' => $request->unit,
-            'distributor_id' => $request->distributor,
-            'name' => $request->name,
-            'stock' => $request->stock,
-            'price' => $request->price
-        ]);
+        try {
+
+            $item = $doctor->items()->create([
+                'doctor_id' => $doctor->id,
+                'unit_id' => $request->unit,
+                'distributor_id' => $request->distributor,
+                'name' => $request->name,
+                'stock' => $request->stock,
+                'price' => $request->price
+            ]);
+            
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
     }
 
     public function show($id)
