@@ -25,6 +25,7 @@ class CreatePatientsTable extends Migration
             $table->integer('weight');
             $table->text('address');
             $table->string('phone');
+            $table->string('insurance_number');
             $table->boolean('is_active');
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
