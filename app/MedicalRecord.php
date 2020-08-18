@@ -9,6 +9,11 @@ class MedicalRecord extends Model
 {
     use SoftDeletes;
     
+    public function clinic()
+    {
+        return $this->belongsTo('App\Clinic');
+    }
+
     public function doctor()
     {
         return $this->belongsTo('App\Doctor');

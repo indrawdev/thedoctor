@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDistributorsTable extends Migration
+class CreateAppointmentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class CreateDistributorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('distributors', function (Blueprint $table) {
+        Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('clinic_id');
-            $table->string('name');
             $table->timestamps();
-            $table->softDeletes('deleted_at', 0);
-
-            $table->foreign('clinic_id')->references('id')->on('clinics');
         });
     }
 
@@ -31,6 +26,6 @@ class CreateDistributorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('distributors');
+        Schema::dropIfExists('appointments');
     }
 }

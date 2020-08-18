@@ -17,11 +17,6 @@ class CreateDoctorsTable extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->string('name');
-            $table->string('slug');
-            $table->text('address');
-            $table->string('phone');
-            $table->string('fax');
-            $table->string('logo');
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
 

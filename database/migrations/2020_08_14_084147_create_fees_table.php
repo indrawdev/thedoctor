@@ -15,12 +15,12 @@ class CreateFeesTable extends Migration
     {
         Schema::create('fees', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('doctor_id');
+            $table->foreignId('clinic_id');
             $table->string('name');
             $table->decimal('price');
             $table->timestamps();
 
-            $table->foreign('doctor_id')->references('id')->on('doctors');
+            $table->foreign('clinic_id')->references('id')->on('clinics');
         });
     }
 

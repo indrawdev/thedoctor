@@ -15,7 +15,7 @@ class CreateMedicalRecordsTable extends Migration
     {
         Schema::create('medical_records', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('doctor_id');
+            $table->foreignId('clinic_id');
             $table->foreignId('registration_id');
             $table->foreignId('patient_id');
             $table->foreignId('fee_id');
@@ -27,7 +27,7 @@ class CreateMedicalRecordsTable extends Migration
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
 
-            $table->foreign('doctor_id')->references('id')->on('doctors');
+            $table->foreign('clinic_id')->references('id')->on('clinics');
             $table->foreign('registration_id')->references('id')->on('registrations');
             $table->foreign('patient_id')->references('id')->on('patients');
             $table->foreign('fee_id')->references('id')->on('fees');

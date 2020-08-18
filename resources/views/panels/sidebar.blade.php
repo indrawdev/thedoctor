@@ -57,6 +57,24 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route('fee.create') }}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Fee
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('item.create') }}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Item
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('doctor.create') }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
@@ -88,6 +106,15 @@
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Registration
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('medical.create') }}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Medical Record
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>

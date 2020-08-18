@@ -15,7 +15,7 @@ class CreateDrugsTable extends Migration
     {
         Schema::create('drugs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('doctor_id');
+            $table->foreignId('clinic_id');
             $table->string('name');
             $table->string('sku');
             $table->decimal('price');
@@ -23,7 +23,7 @@ class CreateDrugsTable extends Migration
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
             
-            $table->foreign('doctor_id')->references('id')->on('doctors');
+            $table->foreign('clinic_id')->references('id')->on('clinics');
         });
     }
 

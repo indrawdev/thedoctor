@@ -15,14 +15,14 @@ class CreateOfficersTable extends Migration
     {
         Schema::create('officers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('doctor_id');
+            $table->foreignId('clinic_id');
             $table->foreignId('user_id');
             $table->string('name');
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
 
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('doctor_id')->references('id')->on('doctors');
+            $table->foreign('clinic_id')->references('id')->on('clinics');
         });
     }
 

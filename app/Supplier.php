@@ -9,8 +9,8 @@ class Supplier extends Model
 {
     use SoftDeletes;
     
-    public function doctor()
+    public function clinic()
     {
-        return $this->belongsTo('App\Doctor');
+        return $this->belongsTo('App\Clinic');
     }
 }

@@ -15,7 +15,7 @@ class CreateSuppliersTable extends Migration
     {
         Schema::create('suppliers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('doctor_id');
+            $table->foreignId('clinic_id');
             $table->string('name');
             $table->text('address');
             $table->string('contact');
@@ -24,7 +24,7 @@ class CreateSuppliersTable extends Migration
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
 
-            $table->foreign('doctor_id')->references('id')->on('doctors');
+            $table->foreign('clinic_id')->references('id')->on('clinics');
         });
     }
 
