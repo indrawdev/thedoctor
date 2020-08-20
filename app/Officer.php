@@ -14,6 +14,11 @@ class Officer extends Model
         return $this->belongsTo('App\Clinic');
     }
 
+    public function appointments()
+    {
+        return $this->hasMany('App\Appointment');
+    }
+
     public function registers()
     {
         return $this->hasMany('App\Registration');

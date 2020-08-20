@@ -27,5 +27,6 @@ Route::resource('/item', 'ItemController');
 Route::resource('/doctor', 'DoctorController');
 Route::resource('/officer', 'OfficerController');
 Route::resource('/patient', 'PatientController');
+Route::resource('/appointment', 'AppointmentController');
 Route::resource('/registration', 'RegistrationController');
 Route::resource('/medical', 'MedicalController');

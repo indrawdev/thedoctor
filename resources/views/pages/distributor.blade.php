@@ -6,15 +6,19 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-success">
+            <div class="card card-success card-outline">
                 <div class="card-header">
-                    <h3 class="card-title">@yield('title')</h3>
+                    <h3 class="card-title">
+                        <i class="fas fa-edit"></i>
+                        @yield('title')
+                    </h3>
+                    <h3 class="card-title float-right">
+                        <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-lg" data-backdrop="static" data-keyboard="false">
+                        Add Distributor
+                        </button>
+                    </h3>
                 </div>
                 <div class="card-body">
-                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg" data-backdrop="static" data-keyboard="false">
-                    Add Distributor
-                    </button>
-                    <br>
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
