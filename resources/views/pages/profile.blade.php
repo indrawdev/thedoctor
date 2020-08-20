@@ -1,6 +1,6 @@
 @extends('layouts/backend')
 
-@section('title', 'Patient')
+@section('title', 'Identity')
 
 @section('content')
 <div class="container-fluid">

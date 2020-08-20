@@ -6,7 +6,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-success">
+            <div class="card card-success card-outline">
                 <div class="card-header">
                     <h3 class="card-title">@yield('title')</h3>
                 </div>
@@ -73,5 +73,3 @@
 </div>
 <!-- /.modal -->
 @endsection
-
-@

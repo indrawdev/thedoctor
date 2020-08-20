@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ProfileController extends Controller
+class LetterController extends Controller
 {
     public function index()
     {
@@ -13,7 +13,7 @@ class ProfileController extends Controller
 
     public function create()
     {
-        return view('pages.profile');
+        return view('pages.letter');
     }
 
     public function store(Request $request)

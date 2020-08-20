@@ -23,6 +23,15 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
           <li class="nav-item">
+            <a href="{{ route('dashboard.create') }}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Dashboard
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('distributor.create') }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
@@ -99,6 +108,15 @@
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Medical Record
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('letter.create') }}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Letter
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>

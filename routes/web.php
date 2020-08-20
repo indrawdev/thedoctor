@@ -20,6 +20,7 @@ Route::get('/', 'HomeController@create')->name('home');
 Route::get('/dashboard', 'DashboardController@create')->name('dashboard');
 Route::get('/main', 'MainController@create')->name('main');
 
+Route::resource('/dashboard', 'DashboardController');
 Route::resource('/user', 'UserController');
 Route::resource('/distributor', 'DistributorController');
 Route::resource('/fee', 'FeeController');
@@ -30,3 +31,4 @@ Route::resource('/patient', 'PatientController');
 Route::resource('/appointment', 'AppointmentController');
 Route::resource('/registration', 'RegistrationController');
 Route::resource('/medical', 'MedicalController');
+Route::resource('/letter', 'LetterController');

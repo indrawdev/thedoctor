@@ -1,6 +1,6 @@
 @extends('layouts/backend')
 
-@section('title', 'Patient')
+@section('title', 'Dashboard')
 
 @section('content')
 <div class="container-fluid">
@@ -15,7 +15,7 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                    
+                        
                     </div>
                 </div>
                 <div class="card-footer">
