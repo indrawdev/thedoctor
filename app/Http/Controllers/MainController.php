@@ -18,7 +18,7 @@ class MainController extends Controller
 
     public function create()
     {
-        return view('pages/main');
+        return view('pages.main');
     }
 
     public function store(Request $request)
