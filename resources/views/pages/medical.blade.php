@@ -9,7 +9,7 @@
             <div class="card card-success card-outline card-tabs">
                 <div class="card-header p-0 pt-1 border-bottom-0">
                     <h3 class="card-title">
-                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-stethoscope fa-lg"></i>
                         @yield('title')
                     </h3>
                     <ul class="nav nav-tabs float-right" id="custom-tabs-three-tab" role="tablist">

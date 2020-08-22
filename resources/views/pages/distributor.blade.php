@@ -9,7 +9,7 @@
             <div class="card card-success card-outline">
                 <div class="card-header">
                     <h3 class="card-title">
-                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-truck fa-lg"></i>
                         @yield('title')
                     </h3>
                     <h3 class="card-title float-right">
@@ -36,13 +36,6 @@
                                 <td>Win 95+</td>
                                 <td> 4</td>
                                 <td>X</td>
-                            </tr>
-                            <tr>
-                                <td>Trident</td>
-                                <td>Internet Explorer 5.0</td>
-                                <td>Win 95+</td>
-                                <td>5</td>
-                                <td>C</td>
                             </tr>
                         </tbody>
                     </table>

@@ -8,7 +8,10 @@
         <div class="col-md-12">
             <div class="card card-success card-outline">
                 <div class="card-header">
-                    <h3 class="card-title">@yield('title')</h3>
+                    <h3 class="card-title">
+                        <i class="fas fa-money-bill fa-lg"></i>
+                        @yield('title')
+                    </h3>
                 </div>
                 <div class="card-body">
                     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg" data-backdrop="static" data-keyboard="false">
