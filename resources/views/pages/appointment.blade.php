@@ -32,7 +32,7 @@
                                 <div class="col-sm-8">
                                     <div class="form-group">
                                         <label>Tanggal lahir</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" id="dob" type="text">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
@@ -67,4 +67,25 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('vendor-style')
+<!-- daterange picker -->
+<link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
+@endsection
+
+@section('vendor-script')
+<!-- date-range-picker -->
+<script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
+@endsection
+
+@section('page-script')
+<script>
+  $(function () {
+    //Date range picker
+    $('#dob').datetimepicker({
+        format: 'L'
+    });
+  });
+</script>
 @endsection

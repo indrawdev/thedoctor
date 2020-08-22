@@ -23,42 +23,42 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
           <li class="nav-item">
-            <a href="{{ route('dashboard.create') }}" class="nav-link">
+            <a href="{{ route('dashboard.create') }}" class="nav-link {{ (request()->is('dashboard/create')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-chart-line"></i>
               <p>
-                Dashboard
+                @lang('menu.dashboard')
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('appointment.create') }}" class="nav-link">
+            <a href="{{ route('appointment.create') }}" class="nav-link {{ (request()->is('appointment/create')) ? 'active' : '' }}">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
-                Appointment
+                @lang('menu.appointment')
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('registration.create') }}" class="nav-link">
+            <a href="{{ route('registration.create') }}" class="nav-link {{ (request()->is('registration/create')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-user-friends"></i>
               <p>
-                Registration
+                @lang('menu.registration')
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('medical.create') }}" class="nav-link">
+            <a href="{{ route('medical.create') }}" class="nav-link {{ (request()->is('medical/create')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-stethoscope"></i>
               <p>
-                Medical Record
+                @lang('menu.medical_record')
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('letter.create') }}" class="nav-link">
+            <a href="{{ route('letter.create') }}" class="nav-link {{ (request()->is('letter/create')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-envelope-open-text"></i>
               <p>
-                Letter
+                @lang('menu.letter')
               </p>
             </a>
           </li>
@@ -66,7 +66,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Reporting
+                @lang('menu.reporting')
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -81,60 +81,60 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+          <li class="nav-item has-treeview {{ (request()->is('master*')) ? 'menu-open' : '' }}">
+            <a href="#" class="nav-link {{ (request()->is('master*')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-database"></i>
               <p>
-                Master Data
+                @lang('menu.master_data')
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('distributor.create') }}" class="nav-link">
+                <a href="{{ route('distributor.create') }}" class="nav-link {{ (request()->is('master/distributor/create')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-truck"></i>
                   <p>
-                    Distributor
+                    @lang('menu.distributor')
                   </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('fee.create') }}" class="nav-link">
+                <a href="{{ route('fee.create') }}" class="nav-link {{ (request()->is('master/fee/create')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-money-bill"></i>
                   <p>
-                    Fee
+                    @lang('menu.fee')
                   </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('item.create') }}" class="nav-link">
+                <a href="{{ route('item.create') }}" class="nav-link {{ (request()->is('master/item/create')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-boxes"></i>
                   <p>
-                    Item
+                    @lang('menu.item')
                   </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('doctor.create') }}" class="nav-link">
+                <a href="{{ route('doctor.create') }}" class="nav-link {{ (request()->is('master/doctor/create')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-user-md"></i>
                   <p>
-                    Doctor
+                    @lang('menu.doctor')
                   </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('officer.create') }}" class="nav-link">
+                <a href="{{ route('officer.create') }}" class="nav-link {{ (request()->is('master/officer/create')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-user-nurse"></i>
                   <p>
-                    Officer
+                    @lang('menu.officer')
                   </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('patient.create') }}" class="nav-link">
+                <a href="{{ route('patient.create') }}" class="nav-link {{ (request()->is('master/patient/create')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-hospital-user"></i>
                   <p>
-                    Patient
+                    @lang('menu.patient')
                   </p>
                 </a>
               </li>

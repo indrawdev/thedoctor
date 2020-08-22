@@ -27,11 +27,14 @@ Route::resource('/registration', 'RegistrationController');
 Route::resource('/medical', 'MedicalController');
 Route::resource('/letter', 'LetterController');
 Route::resource('/report', 'ReportController');
-Route::resource('/distributor', 'DistributorController');
-Route::resource('/fee', 'FeeController');
-Route::resource('/item', 'ItemController');
-Route::resource('/doctor', 'DoctorController');
-Route::resource('/officer', 'OfficerController');
-Route::resource('/patient', 'PatientController');
-Route::resource('/request', 'RequestController');
-Route::resource('/insurance', 'InsuranceController');
+
+Route::prefix('master')->group(function () {
+    Route::resource('/distributor', 'DistributorController');
+    Route::resource('/fee', 'FeeController');
+    Route::resource('/item', 'ItemController');
+    Route::resource('/doctor', 'DoctorController');
+    Route::resource('/officer', 'OfficerController');
+    Route::resource('/patient', 'PatientController');
+    Route::resource('/request', 'RequestController');
+    Route::resource('/insurance', 'InsuranceController');
+});

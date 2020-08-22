@@ -8,16 +8,18 @@
         <div class="col-md-12">
             <div class="card card-success card-outline card-tabs">
                 <div class="card-header p-0 pt-1 border-bottom-0">
-                    <h3 class="card-title">
-                        <i class="fas fa-stethoscope fa-lg"></i>
-                        @yield('title')
-                    </h3>
-                    <ul class="nav nav-tabs float-right" id="custom-tabs-three-tab" role="tablist">
+                    <ul class="nav nav-tabs" id="custom-tabs-two-tab" role="tablist">
+                        <li class="pt-2 px-3">
+                            <h3 class="card-title">
+                                <i class="fas fa-stethoscope fa-lg"></i>
+                                @yield('title')
+                            </h3>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link active" id="custom-tabs-three-home-tab" data-toggle="pill" href="#custom-tabs-three-home" role="tab" aria-controls="custom-tabs-three-home" aria-selected="true">Diagnosa</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="custom-tabs-three-profile-tab" data-toggle="pill" href="#custom-tabs-three-profile" role="tab" aria-controls="custom-tabs-three-profile" aria-selected="false">Obat</a>
+                            <a class="nav-link" id="custom-tabs-three-profile-tab" data-toggle="pill" href="#custom-tabs-three-profile" role="tab" aria-controls="custom-tabs-three-profile" aria-selected="false">Resep</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="custom-tabs-three-messages-tab" data-toggle="pill" href="#custom-tabs-three-messages" role="tab" aria-controls="custom-tabs-three-messages" aria-selected="false">Tindakan</a>
