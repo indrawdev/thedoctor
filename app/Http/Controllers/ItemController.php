@@ -23,12 +23,11 @@ class ItemController extends Controller
 
     public function store(Request $request)
     {
-        $doctor = App\Doctor::findOrFail(1);
+        $clinic = App\Clinic::findOrFail(1);
 
         try {
 
-            $item = $doctor->items()->create([
-                'doctor_id' => $doctor->id,
+            $item = $clinic->items()->create([
                 'unit_id' => $request->unit,
                 'distributor_id' => $request->distributor,
                 'name' => $request->name,

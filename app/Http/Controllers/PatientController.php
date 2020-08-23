@@ -23,16 +23,17 @@ class PatientController extends Controller
 
     public function store(Request $request)
     {
-        $doctor = App\Doctor::findOrFail(1);
+        $clinic = App\Clinic::findOrFail(1);
 
         try {
-            $patient = $doctor->patients()->create([
-                'doctor_id' => $doctor->id,
+            
+            $patient = $clinic->patients()->create([
                 'name' => $request->name,
                 'dob' => $request->dob,
                 'gender' => $request->gender,
                 'blood' => $request->blood
             ]);
+
         } catch (\Throwable $th) {
             //throw $th;
         }

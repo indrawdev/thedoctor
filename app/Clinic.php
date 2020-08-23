@@ -41,6 +41,11 @@ class Clinic extends Model
         return $this->hasMany('App\Cost');
     }
 
+    public function counters()
+    {
+        return $this->hasMany('App\Counter');
+    }
+
     public function setSlugAttribute($value)
     {
         $this->attributes['slug'] = Str::slug($value);

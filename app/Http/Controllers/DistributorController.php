@@ -23,12 +23,11 @@ class DistributorController extends Controller
 
     public function store(Request $request)
     {
-        $doctor = App\Doctor::findOrFail(1);
+        $clinic = App\Clinic::findOrFail(1);
 
         try {
 
-            $distributor = $doctor->distributors()->create([
-                'doctor_id' => $doctor->id,
+            $distributor = $clinic->distributors()->create([
                 'name' => $request->name
             ]);
             

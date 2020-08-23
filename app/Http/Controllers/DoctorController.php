@@ -31,12 +31,11 @@ class DoctorController extends Controller
             'zipcode' => 'required'
         ]);
 
-        $user = App\User::findOrFail(1);
+        $clinic = App\Clinic::findOrFail(1);
 
         try {
 
-            $user->doctor()->create([
-                'user_id' => $user->id,
+            $clinic->doctor()->create([
                 'name' => $request->name,
                 'address' => $request->address,
                 'zipcode' => $request->zipcode

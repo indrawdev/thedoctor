@@ -27,8 +27,7 @@ class UserController extends Controller
         
         try {
 
-            $doctor = $user->doctor()->create([
-                'user_id' => $user->id,
+            $clinic = $user->doctor()->create([
                 'name' => $user->name
             ]);
 
@@ -37,8 +36,8 @@ class UserController extends Controller
         }
     }
 
-    public function approve(Request $request)
+    public function approved(Request $request)
     {
-        
+        //
     }
 }

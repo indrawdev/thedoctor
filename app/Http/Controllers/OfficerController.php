@@ -23,12 +23,11 @@ class OfficerController extends Controller
 
     public function store(Request $request)
     {
-        $doctor = App\Doctor::findOrFail(1);
+        $clinic = App\Clinic::findOrFail(1);
 
         try {
             
-            $officer = $doctor->officers()->create([
-                'doctor_id' => $doctor->id,
+            $officer = $clinic->officers()->create([
                 'name' => $request->name
             ]);
 

@@ -26,6 +26,7 @@ Route::resource('/appointment', 'AppointmentController');
 Route::resource('/registration', 'RegistrationController');
 Route::resource('/medical', 'MedicalController');
 Route::resource('/letter', 'LetterController');
+Route::get('/letter/patient', 'LetterController@patient')->name('letter.patient');
 Route::resource('/report', 'ReportController');
 
 Route::prefix('master')->group(function () {

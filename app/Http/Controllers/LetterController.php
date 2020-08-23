@@ -4,8 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use PDF;
+
 class LetterController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
@@ -39,5 +46,11 @@ class LetterController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function patient()
+    {
+        $pdf = PDF::loadView('prints.patient');
+        return $pdf->stream();
     }
 }

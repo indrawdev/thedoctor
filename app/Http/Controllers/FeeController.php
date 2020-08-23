@@ -23,12 +23,11 @@ class FeeController extends Controller
 
     public function store(Request $request)
     {
-        $doctor = App\Doctor::findOrFail(1);
+        $clinic = App\Clinic::findOrFail(1);
         
         try {
 
-            $fee = $doctor->fees->create([
-                'doctor_id' => $doctor->id,
+            $fee = $clinic->fees->create([
                 'name' => $request->name,
                 'price' => $request->price
             ]);

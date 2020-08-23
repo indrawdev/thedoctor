@@ -33,7 +33,20 @@ class ProfileController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'address' => 'required',
+            'phone' => 'required',
+            'email' => 'required'
+        ]);
+
+        $clinic = App\Clinic::findOrFail(1);
+        $clinic->name = $request->name;
+        $clinic->address = $request->address;
+        $clinic->phone = $request->phone;
+        $clinic->email = $request->email;
+
+        $clinic->save();
     }
 
     public function destroy($id)
