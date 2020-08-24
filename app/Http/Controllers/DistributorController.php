@@ -18,7 +18,7 @@ class DistributorController extends Controller
 
     public function create()
     {
-        return view('pages/distributor');
+        return view('pages.distributor');
     }
 
     public function store(Request $request)

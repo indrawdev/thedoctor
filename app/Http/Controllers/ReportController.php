@@ -18,7 +18,7 @@ class ReportController extends Controller
 
     public function create()
     {
-        //
+        return view('pages.report');
     }
 
     public function store(Request $request)

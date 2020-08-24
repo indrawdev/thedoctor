@@ -4,7 +4,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="#"><b>Admin</b>LTE</a>
+            <a href="#">DokterPraktek</a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
@@ -12,7 +12,6 @@
                 <p class="login-box-msg">Sign in to start your session</p>
                 <form action="{{ route('login') }}" method="post">
                     @csrf
-                    
                     <div class="input-group mb-3">
                         <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                         <div class="input-group-append">
@@ -56,4 +55,14 @@
         </div>
     </div>
 </body>
+@endsection
+
+@section('page-script')
+<script>
+    $(document).ready(function() {
+        $('#login').click(function () {
+            event.preventDefault();
+        });
+    });
+</script>
 @endsection

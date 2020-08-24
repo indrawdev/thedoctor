@@ -1,4 +1,3 @@
-
 <!-- Font Awesome -->
 <link href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
 <!-- Ionicons -->

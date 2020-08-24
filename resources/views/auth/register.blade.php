@@ -4,7 +4,7 @@
 <body class="hold-transition register-page">
     <div class="register-box">
         <div class="register-logo">
-            <a href="#"><b>Admin</b>LTE</a>
+            <a href="#">DokterPraktek</a>
         </div>
         <!-- /.register-logo -->
         <div class="card">
@@ -66,4 +66,14 @@
         </div>
     </div>
 </body>
+@endsection
+
+@section('page-script')
+<script>
+$(document).ready(function() {
+    $('#register').click(function () {
+        event.preventDefault();
+    });
+});
+</script>
 @endsection

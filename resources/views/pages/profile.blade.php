@@ -9,7 +9,7 @@
             <div class="card card-success card-outline">
                 <div class="card-header">
                     <h3 class="card-title">
-                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-clinic-medical fa-lg"></i>
                         @yield('title')
                     </h3>
                 </div>

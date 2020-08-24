@@ -8,12 +8,12 @@ class HistoryController extends Controller
 {
     public function index()
     {
-        return view('pages.history');
+        //
     }
 
     public function create()
     {
-        //
+        return view('pages.history');
     }
 
     public function store(Request $request)

@@ -2,7 +2,6 @@
 
 @section('title', 'Unit')
 
-
 @section('content')
 
 @endsection

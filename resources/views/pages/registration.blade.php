@@ -2,7 +2,6 @@
 
 @section('title', 'Registration')
 
-
 @section('content')
 <div class="container-fluid">
     <div class="row">
