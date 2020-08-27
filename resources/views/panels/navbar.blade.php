@@ -97,15 +97,15 @@
       <li class="nav-item dropdown user-menu">
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
           <img src="{{ asset('img/user2-160x160.jpg') }}" class="user-image img-circle elevation-2" alt="User Image">
-          <span class="d-none d-md-inline">dr. Indra</span>
+          <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
         </a>
         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <!-- User image -->
           <li class="user-header bg-success">
             <img src="{{ asset('img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
             <p>
-              dr. Indra
-              <small>Member since Nov. 2012</small>
+              {{ Auth::user()->name }}
+              <small>{{ Auth::user()->created_at->diffForhumans() }}</small>
             </p>
           </li>
           <!-- Menu Footer-->

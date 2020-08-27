@@ -1,6 +1,6 @@
 @extends('layouts/backend')
 
-@section('title', 'Registration')
+@section('title', __('title.registration'))
 
 @section('content')
 <div class="container-fluid">
@@ -38,8 +38,8 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-success">Save</button>
-                    <button type="submit" class="btn btn-default float-right">Cancel</button>
+                    <button type="submit" class="btn btn-success">@lang('button.save')</button>
+                    <button type="submit" class="btn btn-default float-right">@lang('button.cancel')</button>
                 </div>
             </div>
         </div>

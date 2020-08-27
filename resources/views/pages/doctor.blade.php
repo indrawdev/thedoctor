@@ -1,6 +1,6 @@
 @extends('layouts/backend')
 
-@section('title', 'Doctor')
+@section('title', __('title.doctor'))
 
 @section('content')
 <div class="container-fluid">
@@ -45,8 +45,8 @@
                 </div>
             </div>
             <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success">Save changes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">@lang('button.close')</button>
+                <button type="button" class="btn btn-success">@lang('button.save')</button>
             </div>
         </div>
         <!-- /.modal-content -->
