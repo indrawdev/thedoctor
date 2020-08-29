@@ -52,13 +52,13 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Pemeriksaan</td>
+                    <td><b>Pemeriksaan</b></td>
                     <td class="amount">50.000</td>
                     <td class="qty">1</td>
                     <td class="amount">50.000</td>
                 </tr>
                 <tr>
-                    <td>Ijeksi</td>
+                    <td><b>Ijeksi</b></td>
                     <td class="amount">30.000</td>
                     <td class="qty">1</td>
                     <td class="amount">30.000</td>
@@ -77,13 +77,13 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Paracetamol</td>
+                    <td><b>Paracetamol</b></td>
                     <td class="amount">5.000</td>
                     <td class="qty">5</td>
                     <td class="amount">25.000</td>
                 </tr>
                 <tr>
-                    <td>Antibiotik</td>
+                    <td><b>Antibiotik</b></td>
                     <td class="amount">100.000</td>
                     <td class="qty">1</td>
                     <td class="amount">100.000</td>
@@ -97,8 +97,12 @@
                 <td width="25%" class="amount">215.000</td>
             </tr>
             <tr>
-                <td width="75%" class="amount"><b>Biaya Admin</b></td>
+                <td width="75%" class="amount"><b>Biaya admin</b></td>
                 <td width="25%" class="amount">5.000</td>
+            </tr>
+            <tr>
+                <td width="75%" class="amount"><b>Diskon</b></td>
+                <td width="25%" class="amount">0</td>
             </tr>
             <tr>
                 <td width="75%" class="amount"><b>PPN (10%)</b></td>
@@ -110,5 +114,11 @@
             </tr>
         </table>
         <p>Terbilang : <i>Dua Ratus Empat Puluh Dua Ribu Rupiah</i></p>
+        <table width="100%">
+            <tr>
+                <td width="70%"></td>
+                <td width="30%" align="center">Jakarta, 8 Juni 2020</td>
+            </tr>
+        </table>
     </body>
 </html>
