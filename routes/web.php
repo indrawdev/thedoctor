@@ -27,14 +27,17 @@ Route::resource('/dashboard', 'DashboardController');
 Route::resource('/appointment', 'AppointmentController');
 Route::resource('/registration', 'RegistrationController');
 Route::resource('/examination', 'ExaminationController');
-Route::resource('/medical', 'MedicalController');
+Route::get('/medical/create', 'MedicalController@create')->name('medical.create');
+Route::get('/medical/receipt', 'MedicalController@receipt')->name('medical.receipt');
+Route::get('/medical/print', 'MedicalController@print')->name('medical.print');
 Route::get('/letter/create', 'LetterController@create')->name('letter.create');
+Route::get('/letter/reference', 'LetterController@reference')->name('letter.reference');
 Route::get('/letter/health', 'LetterController@health')->name('letter.health');
 Route::get('/letter/sick', 'LetterController@sick')->name('letter.sick');
-Route::get('/letter/statement', 'LetterController@statement')->name('letter.statement');
 Route::get('profile/create', 'ProfileController@create')->name('profile.create');
 Route::resource('/report', 'ReportController');
 Route::resource('/billing', 'BillingController');
+Route::get('/invoice/{print}', 'InvoiceController@print');
 
 Route::prefix('master')->group(function () {
     Route::resource('/supplier', 'SupplierController');

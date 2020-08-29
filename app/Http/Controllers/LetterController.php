@@ -48,6 +48,12 @@ class LetterController extends Controller
         //
     }
 
+    public function reference()
+    {
+        $pdf = PDF::loadView('prints.letters.reference');
+        return $pdf->stream();
+    }
+
     public function health()
     {
         $pdf = PDF::loadView('prints.letters.health');
@@ -57,12 +63,6 @@ class LetterController extends Controller
     public function sick()
     {
         $pdf = PDF::loadView('prints.letters.sick');
-        return $pdf->stream();
-    }
-
-    public function statement()
-    {
-        $pdf = PDF::loadView('prints.letters.statement');
         return $pdf->stream();
     }
 

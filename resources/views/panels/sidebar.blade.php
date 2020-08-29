@@ -10,6 +10,7 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar Menu -->
+      @auth
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
           <li class="nav-item">
@@ -148,6 +149,7 @@
           </li>
         </ul>
       </nav>
+      @endauth
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

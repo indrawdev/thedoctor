@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use PDF;
+
 class MedicalController extends Controller
 {
     public function __construct()
@@ -69,5 +71,17 @@ class MedicalController extends Controller
     {
         $record = App\MedicalRecord::findOrFail($id);
         $record->delete();
+    }
+
+    public function print()
+    {
+        $pdf = PDF::loadView('prints.patient');
+        return $pdf->stream();
+    }
+
+    public function receipt()
+    {
+        $pdf = PDF::loadView('prints.payments.receipt');
+        return $pdf->stream();
     }
 }
