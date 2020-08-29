@@ -30,15 +30,23 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('registration.create') }}" class="nav-link {{ (request()->is('registration/create')) ? 'active' : '' }}">
-              <i class="nav-icon fas fa-user-friends"></i>
+              <i class="nav-icon fas fa-user-friends "></i>
               <p>
                 @lang('menu.registration')
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('medical.create') }}" class="nav-link {{ (request()->is('medical/create')) ? 'active' : '' }}">
+            <a href="{{ route('examination.create') }}" class="nav-link {{ (request()->is('examination/create')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-stethoscope"></i>
+              <p>
+                @lang('menu.examination')
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('medical.create') }}" class="nav-link {{ (request()->is('medical/create')) ? 'active' : '' }}">
+              <i class="nav-icon fas fa-file-medical"></i>
               <p>
                 @lang('menu.medical_record')
               </p>
@@ -129,6 +137,14 @@
                 </a>
               </li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('billing.create') }}" class="nav-link {{ (request()->is('billing/create')) ? 'active' : '' }}">
+              <i class="nav-icon fas fa-file-invoice"></i>
+              <p>
+                @lang('menu.billing')
+              </p>
+            </a>
           </li>
         </ul>
       </nav>

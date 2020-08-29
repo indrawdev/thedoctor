@@ -1,6 +1,6 @@
 @extends('layouts/backend')
 
-@section('title', __('title.identity'))
+@section('title', __('title.billing'))
 
 @section('content')
 <div class="container-fluid">
@@ -9,7 +9,7 @@
             <div class="card card-success card-outline">
                 <div class="card-header">
                     <h3 class="card-title">
-                        <i class="fas fa-clinic-medical fa-lg"></i>
+                        <i class="fas fa-file-invoice fa-lg"></i>
                         @yield('title')
                         <button type="button" class="btn btn-xs btn-outline-success" data-toggle="popover" data-content="{{ __('popover.registration') }}">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -25,7 +25,8 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                
+                    <button type="button" class="btn btn-success">@lang('button.save')</button>
+                    <button type="button" class="btn btn-default float-right">@lang('button.cancel')</button>
                 </div>
             </div>
         </div>

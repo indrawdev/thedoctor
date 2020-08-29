@@ -5,6 +5,7 @@ return [
     'dashboard' => 'Dashboard',
     'appointment' => 'Appointment',
     'registration' => 'Registration',
+    'examination' => 'Examination',
     'medical_record' => 'Medical Record',
     'letter' => 'Letter',
     'reporting' => 'Reporting',
@@ -14,6 +15,7 @@ return [
     'item' => 'Item',
     'doctor' => 'Doctor',
     'officer' => 'Officer',
-    'patient' => 'Patient'
+    'patient' => 'Patient',
+    'billing' => 'Billing'
 
 ];
