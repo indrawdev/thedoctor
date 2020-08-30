@@ -39,17 +39,17 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                            <button type="submit" class="btn btn-success btn-block">Sign In</button>
                         </div>
                         <!-- /.col -->
                     </div>
                 </form>
 
                 <p class="mb-1">
-                    <a href="#">I forgot my password</a>
+                    <a href="{{ route('password.request') }}" class="text-success">I forgot my password</a>
                 </p>
                 <p class="mb-0">
-                    <a href="{{ route('register') }}" class="text-center">Register a new membership</a>
+                    <a href="{{ route('register') }}" class="text-center text-success">Register a new membership</a>
                 </p>
             </div>
         </div>
@@ -59,10 +59,22 @@
 
 @section('page-script')
 <script>
-    $(document).ready(function() {
-        $('#login').click(function () {
-            event.preventDefault();
+$(document).ready(function() {
+    $('#signin').click(function () {
+        event.preventDefault();
+        $.ajax({
+		    type: 'POST',
+		    url: '',
+		    data: $('#loginform').serialize(),
+		    dataType: 'json',
+		    success: function(json) {
+
+            },
+            error: function() {
+            
+            }
         });
     });
+});
 </script>
 @endsection

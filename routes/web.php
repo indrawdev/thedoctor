@@ -34,6 +34,7 @@ Route::get('/letter/create', 'LetterController@create')->name('letter.create');
 Route::get('/letter/reference', 'LetterController@reference')->name('letter.reference');
 Route::get('/letter/health', 'LetterController@health')->name('letter.health');
 Route::get('/letter/sick', 'LetterController@sick')->name('letter.sick');
+Route::get('/letter/pregnant', 'LetterController@pregnant')->name('letter.pregnant');
 Route::get('profile/create', 'ProfileController@create')->name('profile.create');
 Route::resource('/report', 'ReportController');
 Route::resource('/billing', 'BillingController');
@@ -47,6 +48,5 @@ Route::prefix('master')->group(function () {
     Route::resource('/doctor', 'DoctorController');
     Route::resource('/officer', 'OfficerController');
     Route::resource('/patient', 'PatientController');
-    Route::resource('/request', 'RequestController');
     Route::resource('/insurance', 'InsuranceController');
 });

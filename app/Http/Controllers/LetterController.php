@@ -66,4 +66,10 @@ class LetterController extends Controller
         return $pdf->stream();
     }
 
+    public function pregnant()
+    {
+        $pdf = PDF::loadView('prints.letters.pregnant');
+        return $pdf->stream();
+    }
+
 }

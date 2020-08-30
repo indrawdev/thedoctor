@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">>
+                        <input type="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -46,22 +46,19 @@
                     </div>
                     <div class="row">
                         <div class="col-8">
-                            <div class="icheck-primary">
-                            <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-                            <label for="agreeTerms">
-                            I agree to the <a href="#">terms</a>
-                            </label>
-                        </div>
+                            <div class="icheck-success">
+                                <input type="checkbox" id="agreeTerms" name="terms" value="agree">
+                                <label for="agreeTerms" class="text-success">I agree to the <a href="#" class="text-success">terms</a></label>
+                            </div>
                         </div>
                         <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Register</button>
+                            <button type="submit" class="btn btn-success btn-block">Register</button>
                         </div>
                         <!-- /.col -->
                     </div>
                 </form>
-
-                <a href="{{ route('login') }}" class="text-center">I already have a membership</a>
+                <a href="{{ route('login') }}" class="text-center text-success">I already have a membership</a>
             </div>
         </div>
     </div>
@@ -71,8 +68,20 @@
 @section('page-script')
 <script>
 $(document).ready(function() {
-    $('#register').click(function () {
+    $('#signup').click(function () {
         event.preventDefault();
+        $.ajax({
+		    type: 'POST',
+		    url: '',
+		    data: $('#registerform').serialize(),
+		    dataType: 'json',
+		    success: function(json) {
+
+            },
+            error: function() {
+            
+            }
+        });
     });
 });
 </script>

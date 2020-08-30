@@ -65,15 +65,15 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Name</label>
-                            <input class="form-control form-control" type="text" placeholder="Name">
+                            <input class="form-control" type="text" placeholder="Name">
                         </div>
                         <div class="form-group">
                             <label>Contact</label>
-                            <input class="form-control form-control" type="text" placeholder="Contact">
+                            <input class="form-control" type="text" placeholder="Contact">
                         </div>
                         <div class="form-group">
                             <label>Phone</label>
-                            <input class="form-control form-control" type="text" placeholder="Phone">
+                            <input class="form-control" type="text" placeholder="Phone">
                         </div>
                     </div>
                     <div class="col-md-6">
