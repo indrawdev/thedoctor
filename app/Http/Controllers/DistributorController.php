@@ -21,6 +21,11 @@ class DistributorController extends Controller
         return view('pages.distributor');
     }
 
+    public function search(Request $request)
+    {
+        //
+    }
+
     public function store(Request $request)
     {
         $clinic = App\Clinic::findOrFail(1);

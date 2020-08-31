@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Prescription extends Model
 {
-    public function record()
+    public function medicals()
     {
-        return $this->belongsTo('App\MedicalRecord');
+        return $this->belongsTo('App\Medical');
     }
 }

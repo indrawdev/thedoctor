@@ -4,26 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ReportController extends Controller
+class InventoryController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
     public function index()
-    {
-        //
-    }
-
-    public function search(Request $request)
     {
         //
     }
 
     public function create()
     {
-        return view('pages.report');
+        return view('pages.inventory');
     }
 
     public function store(Request $request)

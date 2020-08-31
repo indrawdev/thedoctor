@@ -14,14 +14,19 @@ class Patient extends Model
         return $this->belongsTo('App\Clinic');
     }
 
+    public function insurances()
+    {
+        return $this->hasMany('App\Insurance');
+    }
+
     public function registers()
     {
         return $this->hasMany('App\Registration');
     }
 
-    public function records()
+    public function medicals()
     {
-        return $this->hasMany('App\MedicalRecord');
+        return $this->hasMany('App\Medical');
     }
     
 }

@@ -20,6 +20,7 @@ class CreateAppointmentsTable extends Migration
             $table->foreignId('patient_id');
             $table->foreignId('officer_id');
             $table->datetime('appointment_at');
+            $table->string('note');
             $table->timestamps();
 
             $table->foreign('clinic_id')->references('id')->on('clinics');

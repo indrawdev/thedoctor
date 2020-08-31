@@ -3,10 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
+use Laravel\Cashier\Billable;
 
 class Clinic extends Model
 {
+    use Billable, SoftDeletes;
+    
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
     public function doctors()
     {
         return $this->hasMany('App\Doctor');
@@ -32,9 +41,9 @@ class Clinic extends Model
         return $this->hasMany('App\Item');
     }
 
-    public function records()
+    public function medicals()
     {
-        return $this->hasMany('App\MedicalRecord');
+        return $this->hasMany('App\Medical');
     }
 
     public function costs()

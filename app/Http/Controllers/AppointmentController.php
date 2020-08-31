@@ -21,6 +21,11 @@ class AppointmentController extends Controller
         return view('pages.appointment');
     }
 
+    public function search(Request $request)
+    {
+        //
+    }
+
     public function store(Request $request)
     {
         $request->validate([

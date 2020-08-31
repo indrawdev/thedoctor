@@ -16,6 +16,11 @@ class RegistrationController extends Controller
         //
     }
 
+    public function search(Request $request)
+    {
+        //
+    }
+
     public function create()
     {
         return view('pages.registration');

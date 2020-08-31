@@ -11,6 +11,11 @@ class ExaminationController extends Controller
         //
     }
 
+    public function search(Request $request)
+    {
+        //
+    }
+
     public function create()
     {
         return view('pages.examination');
@@ -18,7 +23,31 @@ class ExaminationController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $request->validation([
+            'anamnesa' => 'required',
+            'diagnosis' => 'required',
+            'action' => 'required',
+            'total' => 'required'
+        ]);
+
+        $doctor = App\Doctor::findOrFail(1);
+        
+        try {
+
+            $medical = $doctor->medicals()->create([
+                'doctor_id' => $doctor->id,
+                'registration_id' => $request->registration,
+                'patient_id' => $request->patient,
+                'fee_id' => $request->fee,
+                'anamnesa' => $request->anamnesa,
+                'diagnosis' => $request->diagnosis,
+                'action' => $request->action,
+                'total' => $request->total
+            ]);
+            
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
     }
 
     public function show($id)

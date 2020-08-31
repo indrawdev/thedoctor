@@ -16,6 +16,7 @@ class CreatePatientsTable extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
             $table->foreignId('clinic_id');
+            $table->foreignId('insurance_id');
             $table->string('number');
             $table->string('name');
             $table->date('dob');
@@ -31,6 +32,7 @@ class CreatePatientsTable extends Migration
             $table->softDeletes('deleted_at', 0);
 
             $table->foreign('clinic_id')->references('id')->on('clinics');
+            $table->foreign('insurance_id')->references('id')->on('insurances');
         });
     }
 

@@ -1,5 +1,7 @@
 <html>
-    <head></head>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    </head>
     <body>
         <h3 align="center">SURAT KETERANGAN<br><small>Nomor : 1234567890</small></h3>
         <p>Dengan ini saya menerangkan bahwa :</p>

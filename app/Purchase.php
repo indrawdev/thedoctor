@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Supplier extends Model
+class Purchase extends Model
 {
     use SoftDeletes;
     
@@ -14,8 +14,8 @@ class Supplier extends Model
         return $this->belongsTo('App\Clinic');
     }
 
-    public function purchases()
+    public function supplier()
     {
-        return $this->hasMany('App\Purchase');
+        return $this->belongsTo('App\Supplier');
     }
 }

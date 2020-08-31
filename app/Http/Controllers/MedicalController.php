@@ -18,6 +18,11 @@ class MedicalController extends Controller
         //
     }
 
+    public function search(Request $request)
+    {
+        //
+    }
+
     public function create()
     {
         return view('pages.medical');
@@ -69,7 +74,7 @@ class MedicalController extends Controller
 
     public function destroy($id)
     {
-        $record = App\MedicalRecord::findOrFail($id);
+        $record = App\Medical::findOrFail($id);
         $record->delete();
     }
 

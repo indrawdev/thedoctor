@@ -23,6 +23,11 @@ class DoctorController extends Controller
         return view('pages.doctor');
     }
 
+    public function search(Request $request)
+    {
+        //
+    }
+
     public function store(Request $request)
     {
         $request->validation([

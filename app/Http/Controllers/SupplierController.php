@@ -11,6 +11,11 @@ class SupplierController extends Controller
         //
     }
 
+    public function search(Request $request)
+    {
+        //
+    }
+
     public function create()
     {
         return view('pages.supplier');

@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Officer extends Model
 {
     use SoftDeletes;
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
     
     public function clinic()
     {

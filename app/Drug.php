@@ -18,4 +18,14 @@ class Drug extends Model
     {
         return $this->belongsTo('App\Supplier');
     }
+
+    public function category()
+    {
+        return $this->belongsTo('App\Category');
+    }
+
+    public function dosage()
+    {
+        return $this->belongsTo('App\Dosage');
+    }
 }
