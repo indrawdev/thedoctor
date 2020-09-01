@@ -38,10 +38,4 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function login()
-    {
-        if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
-        
-        }
-    }
 }
