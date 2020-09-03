@@ -10,7 +10,7 @@
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
-                <form action="{{ route('login') }}" method="post">
+                <form id="loginform">
                     @csrf
                     <div class="input-group mb-3">
                         <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -39,7 +39,7 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" class="btn btn-success btn-block">Sign In</button>
+                            <button id="login" class="btn btn-success btn-block">Sign In</button>
                         </div>
                         <!-- /.col -->
                     </div>
@@ -60,11 +60,11 @@
 @section('page-script')
 <script>
 $(document).ready(function() {
-    $('#signin').click(function () {
+    $('#login').click(function () {
         event.preventDefault();
         $.ajax({
 		    type: 'POST',
-		    url: '',
+		    url: '{{ route('login') }}',
 		    data: $('#loginform').serialize(),
 		    dataType: 'json',
 		    success: function(json) {
