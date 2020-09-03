@@ -30,7 +30,22 @@ class LetterController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'patient' => 'required',
+        ]);
+
+        $clinic = App\Clinic::findOrFail(1);
+
+        try {
+
+            $officer = $clinic->letters()->create([
+                'patient_id' => $request->patient,
+                'medical_id' => $request->medical
+            ]);
+            
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
     }
 
     public function show($id)

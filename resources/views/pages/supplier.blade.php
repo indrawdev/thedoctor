@@ -1,6 +1,6 @@
 @extends('layouts/backend')
 
-@section('title', __('title.distributor'))
+@section('title', __('title.supplier'))
 
 @section('content')
 <div class="container-fluid">

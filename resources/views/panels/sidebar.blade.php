@@ -90,10 +90,10 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('distributor.create') }}" class="nav-link {{ (request()->is('master/distributor/create')) ? 'active' : '' }}">
+                <a href="{{ route('supplier.create') }}" class="nav-link {{ (request()->is('master/supplier/create')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-truck"></i>
                   <p>
-                    @lang('menu.distributor')
+                    @lang('menu.supplier')
                   </p>
                 </a>
               </li>

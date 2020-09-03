@@ -35,6 +35,7 @@ Route::get('/letter/reference', 'LetterController@reference')->name('letter.refe
 Route::get('/letter/health', 'LetterController@health')->name('letter.health');
 Route::get('/letter/sick', 'LetterController@sick')->name('letter.sick');
 Route::get('/letter/pregnant', 'LetterController@pregnant')->name('letter.pregnant');
+Route::post('/letter/store', 'LetterController@store')->name('letter.store');
 Route::get('profile/create', 'ProfileController@create')->name('profile.create');
 Route::resource('/report', 'ReportController');
 Route::resource('/billing', 'BillingController');

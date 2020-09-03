@@ -10,7 +10,7 @@ return [
     'letter' => 'Surat',
     'reporting' => 'Laporan',
     'master_data' => 'Data',
-    'distributor' => 'Distributor',
+    'supplier' => 'Supplier',
     'fee' => 'Tarif',
     'item' => 'Barang',
     'doctor' => 'Dokter',
