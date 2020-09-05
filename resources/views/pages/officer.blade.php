@@ -18,27 +18,22 @@
                             </svg>
                         </button>
                     </h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Name</label>
-                                <input class="form-control form-control" type="text" placeholder="Name">
-                            </div>
-                            <div class="form-group">
-                                <label>Contact</label>
-                                <input class="form-control form-control" type="text" placeholder="Contact">
-                            </div>
-                            <div class="form-group">
-                                <label>Phone</label>
-                                <input class="form-control form-control" type="text" placeholder="Phone">
+                                <input class="form-control" type="text" placeholder="Name">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Address</label>
-                                <textarea class="form-control" rows="3" placeholder="Address ..."></textarea>
+                                <label>Phone</label>
+                                <input class="form-control" type="text" placeholder="Phone">
                             </div>
                         </div>
                     </div>
@@ -46,6 +41,36 @@
                 <div class="card-footer">
                     <button type="submit" class="btn btn-success">@lang('button.save')</button>
                     <button type="submit" class="btn btn-default float-right">@lang('button.cancel')</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-success card-outline">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        Data
+                    </h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="card-body table-responsive p-0">
+                    <table class="table table-head-fixed text-nowrap">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="3" class="text-center">No Data</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

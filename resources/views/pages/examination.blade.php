@@ -8,12 +8,18 @@
         <div class="col-md-12">
             <div class="card card-success card-outline">
               <div class="card-header d-flex p-0">
-                <h3 class="card-title p-3">Tabs</h3>
+                <h3 class="card-title p-3">
+                    <i class="fas fa-envelope-open-text fa-lg"></i>
+                    @yield('title')
+                </h3>
                 <ul class="nav nav-pills ml-auto p-2">
                   <li class="nav-item"><a class="nav-link active" href="#tab_1" data-toggle="tab">Diagnosa</a></li>
                   <li class="nav-item"><a class="nav-link" href="#tab_2" data-toggle="tab">Resep</a></li>
                   <li class="nav-item"><a class="nav-link" href="#tab_3" data-toggle="tab">Tindakan</a></li>
                 </ul>
+                <div class="card-tools p-3">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                </div>
               </div><!-- /.card-header -->
               <div class="card-body">
                 <div class="tab-content">

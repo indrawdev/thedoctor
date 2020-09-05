@@ -18,69 +18,92 @@
                             </svg>
                         </button>
                     </h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg" data-backdrop="static" data-keyboard="false">
-                        Add Item
-                        </button>
-                        <br>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input class="form-control" type="text" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Unit</label>
+                                <select class="custom-select">
+                                    <option>Dus</option>
+                                    <option>Kotak</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Price</label>
+                                <input class="form-control text-right" type="text" placeholder="Price">
+                            </div>
+                        </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Distributor</label>
+                                <select class="custom-select">
+                                    <option>Kimia Farma</option>
+                                    <option>Indofarma</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Stock</label>
+                                <input class="form-control text-right" type="text" placeholder="Stock">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button id="save" type="button" class="btn btn-success">@lang('button.save')</button>
+                    <button type="button" class="btn btn-default float-right">@lang('button.cancel')</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-success card-outline">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        Data
+                    </h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="card-body table-responsive p-0">
+                    <table class="table table-head-fixed text-nowrap">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Unit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5" class="text-center">No Data</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<div class="modal fade" id="modal-lg">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header bg-success">
-                <h4 class="modal-title">Form Item</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input class="form-control" type="text" placeholder="Name">
-                        </div>
-                        <div class="form-group">
-                            <label>Unit</label>
-                            <select class="form-control">
-                                <option>option 1</option>
-                                <option>option 2</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Distributor</label>
-                            <select class="form-control">
-                                <option>D 1</option>
-                                <option>D 2</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Price</label>
-                            <input class="form-control" type="text" placeholder="Price">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-default" data-dismiss="modal">@lang('button.close')</button>
-                <button type="button" class="btn btn-success">@lang('button.save')</button>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
 @endsection
 
 @section('page-script')

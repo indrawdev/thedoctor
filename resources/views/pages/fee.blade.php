@@ -18,36 +18,56 @@
                             </svg>
                         </button>
                     </h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg" data-backdrop="static" data-keyboard="false">
-                    Add Fee
-                    </button>
-                    <br>
-                    <table id="example1" class="table table-bordered table-striped">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input class="form-control" type="text" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Price</label>
+                                <input class="form-control text-right" type="text" placeholder="Price">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button id="save" type="button" class="btn btn-success">@lang('button.save')</button>
+                    <button type="button" class="btn btn-default float-right">@lang('button.cancel')</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-success card-outline">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        Data
+                    </h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="card-body table-responsive p-0">
+                    <table class="table table-head-fixed text-nowrap">
                         <thead>
                             <tr>
-                                <th>Rendering engine</th>
-                                <th>Browser</th>
-                                <th>Platform(s)</th>
-                                <th>Engine version</th>
-                                <th>CSS grade</th>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>Price</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Trident</td>
-                                <td>Internet Explorer 4.0</td>
-                                <td>Win 95+</td>
-                                <td> 4</td>
-                                <td>X</td>
-                            </tr>
-                            <tr>
-                                <td>Trident</td>
-                                <td>Internet Explorer 5.0</td>
-                                <td>Win 95+</td>
-                                <td>5</td>
-                                <td>C</td>
+                                <td colspan="3" class="text-center">No Data</td>
                             </tr>
                         </tbody>
                     </table>
@@ -56,68 +76,16 @@
         </div>
     </div>
 </div>
-
-<div class="modal fade" id="modal-lg">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header bg-success">
-                <h4 class="modal-title">Form Fee</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input class="form-control" type="text" placeholder="Name">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Price</label>
-                            <input class="form-control" type="text" placeholder="Name">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-default" data-dismiss="modal">@lang('button.close')</button>
-                <button type="button" class="btn btn-success">@lang('button.save')</button>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
 @endsection
 
 @section('vendor-script')
-<!-- DataTables -->
-<script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
-<script src="{{ asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+
 @endsection
 
 @section('page-script')
 <script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
+$(document).ready(function() {
+
+});
 </script>
 @endsection

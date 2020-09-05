@@ -71,10 +71,10 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('distributor.create') }}" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
                   <p>
-                    Annual
+                    Letter
                   </p>
                 </a>
               </li>

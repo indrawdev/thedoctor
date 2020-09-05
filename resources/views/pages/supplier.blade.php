@@ -18,30 +18,73 @@
                             </svg>
                         </button>
                     </h3>
-                    <h3 class="card-title float-right">
-                        <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-lg" data-backdrop="static" data-keyboard="false">
-                        Add Distributor
-                        </button>
-                    </h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <table id="example1" class="table table-bordered table-striped">
+                    <form id="supplier">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input name="name" class="form-control" type="text" placeholder="Name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Address</label>
+                                    <textarea name="address" class="form-control" rows="4"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Contact</label>
+                                    <input name="contact" class="form-control" type="text" placeholder="Contact">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input name="phone" class="form-control" type="text" placeholder="Phone">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input name="email" class="form-control" type="email" placeholder="Email">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <button id="save" type="button" class="btn btn-success">@lang('button.save')</button>
+                    <button type="button" class="btn btn-default float-right">@lang('button.cancel')</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-success card-outline">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        Data
+                    </h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="card-body table-responsive p-0">
+                    <table class="table table-head-fixed text-nowrap">
                         <thead>
                             <tr>
-                                <th>Rendering engine</th>
-                                <th>Browser</th>
-                                <th>Platform(s)</th>
-                                <th>Engine version</th>
-                                <th>CSS grade</th>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Contact</th>
+                                <th>Phone</th>
+                                <th>Email</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Trident</td>
-                                <td>Internet Explorer 4.0</td>
-                                <td>Win 95+</td>
-                                <td> 4</td>
-                                <td>X</td>
+                                <td colspan="6" class="text-center">No Data</td>
                             </tr>
                         </tbody>
                     </table>
@@ -51,78 +94,39 @@
     </div>
 </div>
 
-<div class="modal fade" id="modal-lg">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header bg-success">
-                <h4 class="modal-title">Form Distributor</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input class="form-control" type="text" placeholder="Name">
-                        </div>
-                        <div class="form-group">
-                            <label>Contact</label>
-                            <input class="form-control" type="text" placeholder="Contact">
-                        </div>
-                        <div class="form-group">
-                            <label>Phone</label>
-                            <input class="form-control" type="text" placeholder="Phone">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Address</label>
-                            <textarea class="form-control" rows="3" placeholder="Address ..."></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success">@lang('button.save')</button>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
 @endsection
 
 @section('vendor-script')
-<!-- DataTables -->
-<script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
-<script src="{{ asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+
 @endsection
 
 @section('page-script')
 <script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true,
-      "autoWidth": false,
+$(document).ready(function() {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
     });
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
+
+    $('#save').click(function () {
+        event.preventDefault();
+        $.ajax({
+		    type: 'POST',
+		    url: "{{ route('supplier.store') }}",
+		    data: $("#supplier").serialize(),
+		    dataType: 'json',
+		    success: function(json) {
+                console.log('OK');
+            },
+            error: function() {
+            
+            }
+        });
     });
 
     //Button popover
     $('[data-toggle="popover"]').popover();
-  });
+});
 </script>
 @endsection

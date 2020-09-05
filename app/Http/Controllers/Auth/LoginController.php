@@ -55,11 +55,15 @@ class LoginController extends Controller
                     'message' => 'Login success'
                 ]);
             }
+
+            return redirect()->route('dashboard');
+            
         } else {
             return response()->json([
                 'success' => false,
                 'message' => 'Failed access'
             ]);
+            
         }
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Supplier;
 
 class SupplierController extends Controller
 {
@@ -23,7 +24,24 @@ class SupplierController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'address' => 'required',
+            'contact' => 'required',
+            'phone' => 'required',
+            'email' => 'required'
+        ]);
+
+        $supplier = new Supplier();
+        $supplier->clinic_id = 0;
+        $supplier->name = $request->name;
+        $supplier->address = $request->address;
+        $supplier->contact = $request->contact;
+        $supplier->phone = $request->phone;
+        $supplier->email = $request->email;
+        $supplier->save();
+
+        return response()->json(['success' => true]);
     }
 
     public function show($id)

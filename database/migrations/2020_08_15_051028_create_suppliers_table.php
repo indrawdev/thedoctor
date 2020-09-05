@@ -20,7 +20,7 @@ class CreateSuppliersTable extends Migration
             $table->text('address');
             $table->string('contact');
             $table->string('phone');
-            $table->string('fax');
+            $table->string('email');
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
 

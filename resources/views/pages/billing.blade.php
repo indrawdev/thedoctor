@@ -19,14 +19,22 @@
                         </button>
                     </h3>
                 </div>
-                <div class="card-body">
-                    <div class="row">
-                    
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-success">@lang('button.save')</button>
-                    <button type="button" class="btn btn-default float-right">@lang('button.cancel')</button>
+                <div class="card-body table-responsive p-0">
+                    <table class="table table-head-fixed text-nowrap">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Total</th>
+                                <th>Expired</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="3" class="text-center">No Data</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
