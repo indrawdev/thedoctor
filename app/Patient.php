@@ -28,5 +28,10 @@ class Patient extends Model
     {
         return $this->hasMany('App\Medical');
     }
+
+    public function letters()
+    {
+        return $this->hasMany('App\Letter');
+    }
     
 }

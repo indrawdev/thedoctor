@@ -28,13 +28,13 @@ class RegistrationController extends Controller
 
     public function store(Request $request)
     {
-        $officer = App\Officer::findOrFail(1);
+        $clinic = App\Clinic::findOrFail(1);
 
         try {
 
-            $register = $officer->registers()->create([
-                'doctor_id' => $officer->doctor()->id,
-                'officer_id' => $officer->id,
+            $register = $clinic->registers()->create([
+                'clinic_id' => $clinic->id,
+                'officer_id' => $request->officer,
                 'patient_id' => $request->patient,
                 'registered_at' => $request->registered
             ]);

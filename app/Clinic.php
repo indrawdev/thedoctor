@@ -16,6 +16,16 @@ class Clinic extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function appointments()
+    {
+        return $this->hasMany('App\Appointment');
+    }
+
+    public function registrations()
+    {
+        return $this->hasMany('App\Registration');
+    }
+
     public function doctors()
     {
         return $this->hasMany('App\Doctor');
@@ -51,9 +61,14 @@ class Clinic extends Model
         return $this->hasMany('App\Cost');
     }
 
-    public function counters()
+    public function letters()
     {
-        return $this->hasMany('App\Counter');
+        return $this->hasMany('App\Letter');
+    }
+
+    public function suppliers()
+    {
+        return $this->hasMany('App\Supplier');
     }
 
     public function setSlugAttribute($value)

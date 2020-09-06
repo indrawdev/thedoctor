@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class ExaminationController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
@@ -30,14 +35,15 @@ class ExaminationController extends Controller
             'total' => 'required'
         ]);
 
-        $doctor = App\Doctor::findOrFail(1);
+        $clinic = App\Clinic::findOrFail(1);
         
         try {
 
-            $medical = $doctor->medicals()->create([
-                'doctor_id' => $doctor->id,
+            $medical = $clinic->medicals()->create([
+                'clinic_id' => $clinic->id,
                 'registration_id' => $request->registration,
                 'patient_id' => $request->patient,
+                'doctor_id' => $request->doctor,
                 'fee_id' => $request->fee,
                 'anamnesa' => $request->anamnesa,
                 'diagnosis' => $request->diagnosis,

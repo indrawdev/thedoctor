@@ -37,12 +37,13 @@ class MedicalController extends Controller
             'total' => 'required'
         ]);
 
-        $doctor = App\Doctor::findOrFail(1);
+        $clinic = App\Clinic::findOrFail(1);
         
         try {
 
-            $medical = $doctor->records()->create([
-                'doctor_id' => $doctor->id,
+            $medical = $clinic->records()->create([
+                'clinic_id' => $clinic->id,
+                'doctor_id' => $request->doctor,
                 'registration_id' => $request->registration,
                 'patient_id' => $request->patient,
                 'fee_id' => $request->fee,

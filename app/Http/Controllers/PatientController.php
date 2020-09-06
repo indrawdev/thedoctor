@@ -36,7 +36,8 @@ class PatientController extends Controller
                 'name' => $request->name,
                 'dob' => $request->dob,
                 'gender' => $request->gender,
-                'blood' => $request->blood
+                'blood' => $request->blood,
+                'address' => $request->address
             ]);
 
         } catch (\Throwable $th) {

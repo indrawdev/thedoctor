@@ -43,7 +43,6 @@ Route::get('/invoice/{print}', 'InvoiceController@print');
 
 Route::prefix('master')->group(function () {
     Route::resource('/supplier', 'SupplierController');
-    Route::resource('/distributor', 'DistributorController');
     Route::resource('/fee', 'FeeController');
     Route::resource('/item', 'ItemController');
     Route::resource('/doctor', 'DoctorController');

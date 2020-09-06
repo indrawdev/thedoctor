@@ -32,10 +32,10 @@ class AppointmentController extends Controller
             'date' => 'required'
         ]);
 
-        $officer = App\Officer::findOrFail(1);
+        $clinic = App\Clinic::findOrFail(1);
 
         try {
-            $officer->appointments()->create([
+            $clinic->appointments()->create([
                 'appointment_at' => $request->date,
                 'patient_id' => $request->patient,
                 'officer_id' => $request->officer

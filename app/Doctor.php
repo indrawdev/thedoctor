@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Doctor extends Model
 {
     use SoftDeletes;
-    
-    public function user()
-    {
-        return $this->belongsTo('App\User');
-    }
 
     public function clinic()
     {
         return $this->belongsTo('App\Clinic');
+    }
+    
+    public function letters()
+    {
+        return $this->hasMany('App\Letter');
     }
 }

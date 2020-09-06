@@ -33,7 +33,8 @@ class OfficerController extends Controller
         try {
             
             $officer = $clinic->officers()->create([
-                'name' => $request->name
+                'name' => $request->name,
+                'phone' => $request->phone
             ]);
 
         } catch (\Throwable $th) {

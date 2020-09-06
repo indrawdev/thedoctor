@@ -13,7 +13,7 @@ class Appointment extends Model
 
     public function patient()
     {
-        return $this->belongsTo('App\Patuent');
+        return $this->belongsTo('App\Patient');
     }
 
     public function officer()

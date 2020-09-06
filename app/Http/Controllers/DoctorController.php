@@ -42,8 +42,7 @@ class DoctorController extends Controller
 
             $clinic->doctor()->create([
                 'name' => $request->name,
-                'address' => $request->address,
-                'zipcode' => $request->zipcode
+                'phone' => $request->phone
             ]);
             
         } catch (\Throwable $th) {
