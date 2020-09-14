@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -11,11 +11,11 @@ class Distributor extends Model
 
     public function clinic()
     {
-        return $this->belongsTo('App\Clinic');
+        return $this->belongsTo('App\Models\Clinic');
     }
 
     public function items()
     {
-        return $this->hasMany('App\Item');
+        return $this->hasMany('App\Models\Item');
     }
 }

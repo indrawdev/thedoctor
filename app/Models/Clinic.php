@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -13,62 +13,62 @@ class Clinic extends Model
     
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Models\User');
     }
 
     public function appointments()
     {
-        return $this->hasMany('App\Appointment');
+        return $this->hasMany('App\Models\Appointment');
     }
 
     public function registrations()
     {
-        return $this->hasMany('App\Registration');
+        return $this->hasMany('App\Models\Registration');
     }
 
     public function doctors()
     {
-        return $this->hasMany('App\Doctor');
+        return $this->hasMany('App\Models\Doctor');
     }
 
     public function officers()
     {
-        return $this->hasMany('App\Officer');
+        return $this->hasMany('App\Models\Officer');
     }
 
     public function patients()
     {
-        return $this->hasMany('App\Patient');
+        return $this->hasMany('App\Models\Patient');
     }
 
     public function fees()
     {
-        return $this->hasMany('App\Fee');
+        return $this->hasMany('App\Models\Fee');
     }
 
     public function items()
     {
-        return $this->hasMany('App\Item');
+        return $this->hasMany('App\Models\Item');
     }
 
     public function medicals()
     {
-        return $this->hasMany('App\Medical');
+        return $this->hasMany('App\Models\Medical');
     }
 
     public function costs()
     {
-        return $this->hasMany('App\Cost');
+        return $this->hasMany('App\Models\Cost');
     }
 
     public function letters()
     {
-        return $this->hasMany('App\Letter');
+        return $this->hasMany('App\Models\Letter');
     }
 
     public function suppliers()
     {
-        return $this->hasMany('App\Supplier');
+        return $this->hasMany('App\Models\Supplier');
     }
 
     public function setSlugAttribute($value)

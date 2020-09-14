@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -41,6 +41,6 @@ class User extends Authenticatable
     
     public function clinic()
     {
-        return $this->hasOne('App\Clinic');
+        return $this->hasOne('App\Models\Clinic');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -11,27 +11,27 @@ class Patient extends Model
     
     public function clinic()
     {
-        return $this->belongsTo('App\Clinic');
+        return $this->belongsTo('App\Models\Clinic');
     }
 
     public function insurances()
     {
-        return $this->hasMany('App\Insurance');
+        return $this->hasMany('App\Models\Insurance');
     }
 
     public function registers()
     {
-        return $this->hasMany('App\Registration');
+        return $this->hasMany('App\Models\Registration');
     }
 
     public function medicals()
     {
-        return $this->hasMany('App\Medical');
+        return $this->hasMany('App\Models\Medical');
     }
 
     public function letters()
     {
-        return $this->hasMany('App\Letter');
+        return $this->hasMany('App\Models\Letter');
     }
     
 }
