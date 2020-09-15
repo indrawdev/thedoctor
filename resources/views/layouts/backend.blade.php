@@ -13,7 +13,7 @@
 
 </head>
 <body class="accent-success sidebar-mini layout-fixed">
-    <div class="wrapper">
+    <div id="app" class="wrapper">
         @include('panels/navbar')
 
         @include('panels/sidebar')
