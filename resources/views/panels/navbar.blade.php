@@ -5,9 +5,6 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="{{ url('/') }}" role="button"><i class="fas fa-bars"></i></a>
       </li>
-      <li>
-        <a class="nav-link"><span class="badge bg-warning">20-03-2020</span></a>
-      </li>
     </ul>
 
     <!-- Right navbar links -->

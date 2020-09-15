@@ -9,6 +9,11 @@ return [
     'medical_record' => 'Medical Record',
     'letter' => 'Letter',
     'reporting' => 'Reporting',
+    'report' => [
+        'fee_doctor' => 'Fee Doctor',
+        'sales' => 'Sales',
+        'bpjs' => 'BPJS'
+    ],
     'master_data' => 'Master Data',
     'supplier' => 'Supplier',
     'fee' => 'Fee',

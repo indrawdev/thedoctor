@@ -23,20 +23,22 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input class="form-control" type="text" placeholder="Name">
+                    <form id="fee">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input class="form-control" type="text" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Price</label>
+                                    <input class="form-control text-right" type="text" placeholder="Price">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label>Price</label>
-                                <input class="form-control text-right" type="text" placeholder="Price">
-                            </div>
-                        </div>
-                    </div>
+                    </form>
                 </div>
                 <div class="card-footer">
                     <button id="save" type="button" class="btn btn-success">@lang('button.save')</button>
@@ -85,7 +87,28 @@
 @section('page-script')
 <script>
 $(document).ready(function() {
+    
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
 
+    $('#save').click(function () {
+        event.preventDefault();
+        $.ajax({
+		    type: 'POST',
+		    url: "{{ route('fee.store') }}",
+		    data: $("#fee").serialize(),
+		    dataType: 'json',
+		    success: function(json) {
+                console.log('OK');
+            },
+            error: function() {
+            
+            }
+        });
+    });
 });
 </script>
 @endsection

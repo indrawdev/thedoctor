@@ -23,54 +23,56 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input class="form-control" type="text" placeholder="Name">
-                            </div>
-                            <div class="form-group">
-                                <label>Address</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label>Date of Birth</label>
-                                <input class="form-control" type="text" placeholder="Date of Birth">
-                            </div>
-                            <div class="form-group">
-                                <label>Weigth</label>
-                                <input class="form-control" type="number" placeholder="Weight">
-                            </div>
-                            <div class="form-group">
-                                <label>Blood type</label>
-                                <select class="custom-select">
-                                    <option>O</option>
-                                    <option>AB</option>
-                                    <option>A</option>
-                                    <option>B</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label>Gender</label>
-                                <div class="custom-control custom-radio">
-                                    <input class="custom-control-input" type="radio" id="male" name="gender">
-                                    <label for="male" class="custom-control-label">Male</label>
+                    <form id="patient">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input class="form-control" type="text" placeholder="Name">
                                 </div>
-                                <div class="custom-control custom-radio">
-                                    <input class="custom-control-input" type="radio" id="female" name="gender" checked>
-                                    <label for="female" class="custom-control-label">Female</label>
+                                <div class="form-group">
+                                    <label>Address</label>
+                                    <textarea class="form-control" rows="3"></textarea>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label>Height</label>
-                                <input class="form-control" type="number" placeholder="Height">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Date of Birth</label>
+                                    <input class="form-control" type="text" placeholder="Date of Birth">
+                                </div>
+                                <div class="form-group">
+                                    <label>Weigth</label>
+                                    <input class="form-control" type="number" placeholder="Weight">
+                                </div>
+                                <div class="form-group">
+                                    <label>Blood type</label>
+                                    <select class="custom-select">
+                                        <option>O</option>
+                                        <option>AB</option>
+                                        <option>A</option>
+                                        <option>B</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Gender</label>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" id="male" name="gender">
+                                        <label for="male" class="custom-control-label">Male</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" id="female" name="gender" checked>
+                                        <label for="female" class="custom-control-label">Female</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Height</label>
+                                    <input class="form-control" type="number" placeholder="Height">
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
                 <div class="card-footer">
                     <button id="save" type="button" class="btn btn-success">@lang('button.save')</button>
@@ -116,9 +118,31 @@
 
 @section('page-script')
 <script>
-  $(function () {
+$(document).ready(function() {
+    
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $('#save').click(function () {
+        event.preventDefault();
+        $.ajax({
+		    type: 'POST',
+		    url: "{{ route('patient.store') }}",
+		    data: $("#patient").serialize(),
+		    dataType: 'json',
+		    success: function(json) {
+                console.log('OK');
+            },
+            error: function() {
+            
+            }
+        });
+    });
     //Button popover
     $('[data-toggle="popover"]').popover();
-  });
+});
 </script>
 @endsection

@@ -280,9 +280,33 @@
 
 @section('page-script')
 <script>
-  $(function () {
+$(document).ready(function() {
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $('#save').click(function () {
+        event.preventDefault();
+        $.ajax({
+		    type: 'POST',
+		    url: "{{ route('examination.store') }}",
+		    data: $("#examination").serialize(),
+		    dataType: 'json',
+		    success: function(json) {
+                console.log('OK');
+            },
+            error: function() {
+            
+            }
+        });
+    });
+
     //Button popover
     $('[data-toggle="popover"]').popover();
-  });
+
+});
 </script>
 @endsection

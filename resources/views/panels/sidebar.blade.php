@@ -10,6 +10,11 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar Menu -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="info">
+          <span class="badge bg-warning">20-03-2020</span>
+        </div>
+      </div>
       @auth
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
@@ -74,7 +79,23 @@
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
                   <p>
-                    Letter
+                    @lang('menu.report.fee_doctor')
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>
+                    @lang('menu.report.sales')
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>
+                    @lang('menu.report.bpjs')
                   </p>
                 </a>
               </li>
