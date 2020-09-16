@@ -34,7 +34,7 @@ class LetterController extends Controller
             'patient' => 'required',
         ]);
 
-        $clinic = App\Clinic::findOrFail(1);
+        $clinic = App\Models\Clinic::findOrFail(1);
 
         try {
 

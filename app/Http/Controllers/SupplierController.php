@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Supplier;
+use App\Models\Clinic;
 
 class SupplierController extends Controller
 {
@@ -36,17 +36,24 @@ class SupplierController extends Controller
             'phone' => 'required',
             'email' => 'required'
         ]);
+        
+        $clinic = Clinic::findOrFail(1);
 
-        $supplier = new Supplier();
-        $supplier->clinic_id = 0;
-        $supplier->name = $request->name;
-        $supplier->address = $request->address;
-        $supplier->contact = $request->contact;
-        $supplier->phone = $request->phone;
-        $supplier->email = $request->email;
-        $supplier->save();
+        try {
+            
+            $supplier = $clinic->supplier()->create([
+                'name' => $request->name,
+                'address' => $request->address,
+                'contact' => $request->contact,
+                'phone' => $request->phone,
+                'email' => $request->email
+            ]);
 
-        return response()->json(['success' => true]);
+            return response()->json(['success' => true]);
+
+        } catch (\Throwable $th) {
+            return response()->json(['success' => false]);
+        }
     }
 
     public function show($id)

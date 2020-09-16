@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use App\Models\Insurance;
 
 class InsuranceController extends Controller
 {
@@ -33,7 +34,7 @@ class InsuranceController extends Controller
             'name' => 'required'
         ]);
 
-        $insurance = new App\Insurance;
+        $insurance = new Insurance();
         $insurance->name = $request->name;
         $insurance->save();
     }

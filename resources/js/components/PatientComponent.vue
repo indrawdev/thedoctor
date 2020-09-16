@@ -12,7 +12,11 @@
                 form: {
                     name: '',
                     dob: '',
-                    gender: ''
+                    gender: '',
+                    height: '',
+                    weight: '',
+                    blood: [],
+                    address: ''
                 }
             }
         },
@@ -28,6 +32,15 @@
             },
             deleted() {
                 
+            },
+            cleared() {
+                this.form.name = '';
+                this.form.dob = '';
+                this.form.gender = '';
+                this.form.height = '';
+                this.form.weight = '';
+                this.form.blood = '';
+                this.form.address = '';
             }
         }
     }

@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Doctor;
+use App\Models\Clinic;
 
 class DoctorController extends Controller
 {
@@ -30,23 +29,24 @@ class DoctorController extends Controller
 
     public function store(Request $request)
     {
-        $request->validation([
+        $request->validate([
             'name' => 'required',
-            'address' => 'required',
-            'zipcode' => 'required'
+            'phone' => 'required',
         ]);
 
-        $clinic = App\Clinic::findOrFail(1);
+        $clinic = Clinic::findOrFail(1);
 
         try {
 
-            $clinic->doctor()->create([
+            $doctor = $clinic->doctor()->create([
                 'name' => $request->name,
                 'phone' => $request->phone
             ]);
+
+            return response()->json(['success' => true]);
             
         } catch (\Throwable $th) {
-            //throw $th;
+            return response()->json(['success' => false]);
         }
     }
 

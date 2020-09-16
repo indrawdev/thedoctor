@@ -1,27 +1,34 @@
 <template>
-
+    
 </template>
 
 <script>
     export default {
         mounted() {
-            console.log('Component login.')
+            console.log('Component medical.')
         },
         data() {
             return {
                 form: {
-                    email: '',
-                    password: ''
+                    name: ''
                 }
             }
         },
         methods: {
-            signed() {
+            loaded() {
 
             },
+            created() {
+
+            },
+            updated() {
+
+            },
+            deleted() {
+                
+            },
             cleared() {
-                this.form.email = '';
-                this.form.password = '';
+
             }
         }
     }

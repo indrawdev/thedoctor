@@ -23,6 +23,9 @@ class CreateClinicsTable extends Migration
             $table->string('email');
             $table->string('logo')->nullable();
             $table->timestamps();
+            $table->softDeletes('deleted_at', 0);
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

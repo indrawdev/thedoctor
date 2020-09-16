@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Clinic;
 
 class FeeController extends Controller
 {
@@ -28,7 +29,12 @@ class FeeController extends Controller
 
     public function store(Request $request)
     {
-        $clinic = App\Clinic::findOrFail(1);
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required'
+        ]);
+
+        $clinic = Clinic::findOrFail(1);
         
         try {
 
@@ -37,8 +43,10 @@ class FeeController extends Controller
                 'price' => $request->price
             ]);
             
+            return response()->json(['success' => true]);
+
         } catch (\Throwable $th) {
-            //throw $th;
+            return response()->json(['success' => false]);
         }
 
     }

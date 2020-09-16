@@ -28,7 +28,7 @@ class ItemController extends Controller
 
     public function store(Request $request)
     {
-        $clinic = App\Clinic::findOrFail(1);
+        $clinic = App\Models\Clinic::findOrFail(1);
 
         try {
 

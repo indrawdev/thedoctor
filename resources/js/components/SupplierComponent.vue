@@ -83,7 +83,8 @@
                     email: this.form.email
                 })
                 .then(response => {
-
+                    console.log(response);
+                    this.cleared();
                 });
             },
             updated() {
@@ -91,6 +92,13 @@
             },
             deleted() {
                 
+            },
+            cleared() {
+                this.form.name = '';
+                this.form.address = '';
+                this.form.contact = '';
+                this.form.phone = '';
+                this.form.email = '';
             }
         }
     }

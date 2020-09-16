@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Clinic;
 
 class OfficerController extends Controller
 {
@@ -28,7 +29,7 @@ class OfficerController extends Controller
 
     public function store(Request $request)
     {
-        $clinic = App\Clinic::findOrFail(1);
+        $clinic = Clinic::findOrFail(1);
 
         try {
             
@@ -37,8 +38,10 @@ class OfficerController extends Controller
                 'phone' => $request->phone
             ]);
 
+            return response()->json(['success' => true]);
+
         } catch (\Throwable $th) {
-            //throw $th;
+            return response()->json(['success' => false]);
         }
     }
 
