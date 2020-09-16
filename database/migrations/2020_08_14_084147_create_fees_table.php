@@ -17,7 +17,7 @@ class CreateFeesTable extends Migration
             $table->id();
             $table->foreignId('clinic_id');
             $table->string('name');
-            $table->decimal('price', 0);
+            $table->decimal('price', 9);
             $table->timestamps();
 
             $table->foreign('clinic_id')->references('id')->on('clinics');

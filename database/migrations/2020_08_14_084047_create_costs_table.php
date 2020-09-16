@@ -17,7 +17,7 @@ class CreateCostsTable extends Migration
             $table->id();
             $table->foreignId('clinic_id');
             $table->string('name');
-            $table->decimal('amount', 0);
+            $table->decimal('amount', 9);
             $table->timestamps();
 
             $table->foreign('clinic_id')->references('id')->on('clinics');

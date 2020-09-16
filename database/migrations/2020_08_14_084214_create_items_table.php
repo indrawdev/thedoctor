@@ -19,7 +19,7 @@ class CreateItemsTable extends Migration
             $table->foreignId('unit_id');
             $table->foreignId('distributor_id');
             $table->string('name');
-            $table->decimal('price');
+            $table->decimal('price', 9);
             $table->integer('stock');
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);

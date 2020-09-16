@@ -5,7 +5,21 @@
 <script>
     export default {
         mounted() {
-            console.log('Component mounted.')
+            console.log('Component items.');
+        },
+        methods: {
+            loaded() {
+
+            },
+            created() {
+
+            },
+            updated() {
+
+            },
+            deleted() {
+
+            }
         }
     }
 </script>

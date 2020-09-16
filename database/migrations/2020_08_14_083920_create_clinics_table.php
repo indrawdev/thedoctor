@@ -20,8 +20,8 @@ class CreateClinicsTable extends Migration
             $table->string('slug');
             $table->text('address');
             $table->string('phone');
-            $table->string('fax');
-            $table->string('logo');
+            $table->string('email');
+            $table->string('logo')->nullable();
             $table->timestamps();
         });
     }

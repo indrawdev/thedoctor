@@ -39,32 +39,4 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function login(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required'
-        ]);
-
-        if (\Auth::attempt(['email' => $request->email, 'password' => $request->password]))
-        {
-            if ($request->expectsJson())
-            {
-                return response()->json([
-                    'success' => true,
-                    'message' => 'Login success'
-                ]);
-            }
-
-            return redirect()->route('dashboard');
-            
-        } else {
-            return response()->json([
-                'success' => false,
-                'message' => 'Failed access'
-            ]);
-            
-        }
-    }
-
 }

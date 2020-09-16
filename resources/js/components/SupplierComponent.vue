@@ -71,7 +71,7 @@
             }
         },
         methods: {
-            init() {
+            loaded() {
 
             },
             created() {
@@ -88,6 +88,9 @@
             },
             updated() {
 
+            },
+            deleted() {
+                
             }
         }
     }
