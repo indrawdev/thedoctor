@@ -68,9 +68,9 @@ class LetterController extends Controller
         //
     }
 
-    public function reference()
+    public function referral()
     {
-        $pdf = PDF::loadView('prints.letters.reference');
+        $pdf = PDF::loadView('prints.letters.referral');
         return $pdf->stream();
     }
 

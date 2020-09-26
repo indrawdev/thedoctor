@@ -20,34 +20,41 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Name</label>
+                            <div class="input-group mb-3">
                                 <input v-model="form.name" class="form-control" type="text" placeholder="Name">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-check"></i></span>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Address</label>
-                                <textarea v-model="form.address" class="form-control" rows="4"></textarea>
+                            <div class="input-group mb-3">
+                                <textarea v-model="form.address" class="form-control" rows="4" placeholder="Address"></textarea>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Contact</label>
+                            <div class="input-group mb-3">
                                 <input v-model="form.contact" class="form-control" type="text" placeholder="Contact">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-check"></i></span>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Phone</label>
+                            <div class="input-group mb-3">
                                 <input v-model="form.phone" class="form-control" type="text" placeholder="Phone">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Email</label>
+                            <div class="input-group mb-3">
                                 <input v-model="form.email" class="form-control" type="text" placeholder="Email">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button @click="created" type="button" class="btn btn-success">Save</button>
-                    <button type="button" class="btn btn-default float-right">Cancel</button>
+                    <button @click="cleared" type="button" class="btn btn-default">Cancel</button>
+                    <button @click="created" type="button" class="btn btn-success float-right">Save</button>
                 </div>
             </div>
         </div>

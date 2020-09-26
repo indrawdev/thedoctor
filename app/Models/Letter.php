@@ -20,4 +20,9 @@ class Letter extends Model
     {
         return $this->belongsTo('App\Models\Doctor');
     }
+
+    public function setNumberAttribute($value)
+    {
+        $this->attributes['number'] = $value;
+    }
 }

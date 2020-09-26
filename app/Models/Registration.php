@@ -23,4 +23,9 @@ class Registration extends Model
     {
         return $this->belongsTo('App\Models\Officer');
     }
+
+    public function setNumberAttribute($value)
+    {
+        $this->attributes['number'] = $value;
+    }
 }

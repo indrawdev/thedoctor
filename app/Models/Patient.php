@@ -33,5 +33,10 @@ class Patient extends Model
     {
         return $this->hasMany('App\Models\Letter');
     }
+
+    public function setNumberAttribute($value)
+    {
+        $this->attributes['number'] = $value;
+    }
     
 }

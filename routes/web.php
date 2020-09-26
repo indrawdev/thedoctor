@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-//Auth::routes(['verify' => true]);
+//Auth::routes(['verify' => false]);
 
-Route::get('/', 'HomeController@create')->name('home');
+Route::get('/', 'Auth\LoginController@showLoginForm');
 Route::get('/dashboard', 'DashboardController@create')->name('dashboard');
 
 Route::get('/main', 'MainController@create')->name('main');
@@ -31,7 +31,7 @@ Route::get('/medical/create', 'MedicalController@create')->name('medical.create'
 Route::get('/medical/receipt', 'MedicalController@receipt')->name('medical.receipt');
 Route::get('/medical/print', 'MedicalController@print')->name('medical.print');
 Route::get('/letter/create', 'LetterController@create')->name('letter.create');
-Route::get('/letter/reference', 'LetterController@reference')->name('letter.reference');
+Route::get('/letter/referral', 'LetterController@referral')->name('letter.referral');
 Route::get('/letter/health', 'LetterController@health')->name('letter.health');
 Route::get('/letter/sick', 'LetterController@sick')->name('letter.sick');
 Route::get('/letter/pregnant', 'LetterController@pregnant')->name('letter.pregnant');

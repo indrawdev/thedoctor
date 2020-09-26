@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Appointment;
 
 class AppointmentController extends Controller
 {
@@ -59,6 +60,11 @@ class AppointmentController extends Controller
     public function update(Request $request, $id)
     {
         //
+    }
+
+    public function save(Appointment $appointment, Request $request)
+    {
+
     }
 
     public function destroy($id)

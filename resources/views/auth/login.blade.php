@@ -4,7 +4,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="#">DokterPraktek</a>
+            <a href="{{ route('login') }}">DokterPraktek</a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
@@ -19,6 +19,11 @@
                                 <span class="fas fa-envelope"></span>
                             </div>
                         </div>
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                     <div class="input-group mb-3">
                         <input type="password" class="form-control" placeholder="Password" name="password" required autocomplete="current-password">
@@ -27,6 +32,11 @@
                                 <span class="fas fa-lock"></span>
                             </div>
                         </div>
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                     <div class="row">
                         <div class="col-8">
@@ -46,7 +56,9 @@
                 </form>
 
                 <p class="mb-1">
+                    @if (Route::has('password.request'))
                     <a href="{{ route('password.request') }}" class="text-success">I forgot my password</a>
+                    @endif
                 </p>
                 <p class="mb-0">
                     <a href="{{ route('register') }}" class="text-center text-success">Register a new membership</a>

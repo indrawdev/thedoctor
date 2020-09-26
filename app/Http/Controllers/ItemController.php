@@ -34,7 +34,7 @@ class ItemController extends Controller
 
             $item = $clinic->items()->create([
                 'unit_id' => $request->unit,
-                'distributor_id' => $request->distributor,
+                'supplier_id' => $request->supplier,
                 'name' => $request->name,
                 'stock' => $request->stock,
                 'price' => $request->price

@@ -5,6 +5,7 @@
                 <div class="card-header">
                     <h3 class="card-title">
                         <i class="fas fa-money-bill fa-lg"></i>
+                        Fee
                         <button type="button" class="btn btn-xs btn-outline-success" data-toggle="popover">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
@@ -19,22 +20,26 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-8">
-                            <div class="form-group">
-                                <label>Name</label>
+                            <div class="input-group mb-3">
                                 <input v-model="form.name" class="form-control" type="text" placeholder="Name">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-check"></i></span>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
-                                <label>Price</label>
-                                <input v-model="form.price" class="form-control text-right" type="text" placeholder="Price">
+                            <div class="input-group mb-3">
+                                <input v-model="form.price" class="form-control text-right" type="number" placeholder="Price">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">Rp</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button @click="created" type="button" class="btn btn-success">Save</button>
-                    <button type="button" class="btn btn-default float-right">Cancel</button>
+                    <button @click="cleared" type="button" class="btn btn-default">Cancel</button>
+                    <button @click="created" type="button" class="btn btn-success float-right">Save</button>
                 </div>
             </div>
         </div>
@@ -58,6 +63,9 @@
             loaded() {
             
             },
+            confirm() {
+
+            },
             created() {
                 axios.post('/master/fee', {
                     name: this.form.name,
@@ -69,7 +77,14 @@
                 });
             },
             updated() {
-
+                axios.put('/master/fee', {
+                    name: this.form.name,
+                    price: this.form.price
+                })
+                .then(response => {
+                    console.log(response);
+                    this.cleared();
+                });
             },
             deleted() {
 

@@ -20,21 +20,19 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Name</label>
                                 <input v-model="form.name" class="form-control" type="text" placeholder="Name">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Phone</label>
                                 <input v-model="form.phone" class="form-control" type="text" placeholder="Phone">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button @click="created" type="button" class="btn btn-success">Save</button>
-                    <button type="button" class="btn btn-default float-right">Cancel</button>
+                    <button @click="cleared" type="button" class="btn btn-default">Cancel</button>
+                    <button @click="created" type="button" class="btn btn-success float-right">Save</button>
                 </div>
             </div>
         </div>
@@ -58,6 +56,9 @@
             loaded() {
 
             },
+            confirm() {
+
+            },
             created() {
                 axios.post('/master/doctor', {
                     name: this.form.name,
@@ -69,7 +70,14 @@
                 });
             },
             updated() {
-
+                axios.put('/master/doctor', {
+                    name: this.form.name,
+                    phone: this.form.phone
+                })
+                .then(response => {
+                    console.log(response);
+                    this.cleared();
+                });
             },
             deleted() {
 
