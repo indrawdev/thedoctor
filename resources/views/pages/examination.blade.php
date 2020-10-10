@@ -33,7 +33,7 @@
                     <treatment-component></treatment-component>
                   </div>
                 </div>
-              </div>
+              </div><
             </div>
         </div>
     </div>
