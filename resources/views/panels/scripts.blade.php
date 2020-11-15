@@ -5,7 +5,7 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('js/adminlte.min.js') }}"></script>
 
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset(mix('js/app.js')) }}"></script>
 @yield('vendor-script')
 
 @yield('page-script')

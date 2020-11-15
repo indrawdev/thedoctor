@@ -13,9 +13,23 @@ class ImmunizationSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('immunizations')->delete();
+
         DB::table('immunizations')->insert([
-            ['name' => 'BCG'],
-            ['name' => ''],
+            ['name' => 'B.C.G'],
+            ['name' => 'D.P.T/INFARIX'],
+            ['name' => 'POLIO/IPV'],
+            ['name' => 'TYPHI-M'],
+            ['name' => 'HEPATITIS B.'],
+            ['name' => 'CAMPAK/MMR'],
+            ['name' => 'HIB'],
+            ['name' => 'PREVENAR'],
+            ['name' => 'IPD'],
+            ['name' => 'HEPATITIS A'],
+            ['name' => 'VARISELA'],
+            ['name' => 'ROTAVIRUS'],
+            ['name' => 'INFLUENSA'],
+            ['name' => 'MANTOUX'],
         ]);
     }
 }

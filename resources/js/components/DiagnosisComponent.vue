@@ -35,11 +35,21 @@
                     this.cleared();
                 });
             },
-            updated() {
+            updated(id) {
+                axios.put('/master/officer/' + id, {
 
+                })
+                .then(response => {
+
+                });
             },
-            deleted() {
+            deleted(id) {
+                axios.delete('/master/officer/' + id, {
 
+                })
+                .then(response => {
+
+                });
             },
             cleared() {
                 this.form.name = '';

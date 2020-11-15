@@ -2086,8 +2086,12 @@ __webpack_require__.r(__webpack_exports__);
         _this.cleared();
       });
     },
-    updated: function updated() {},
-    deleted: function deleted() {},
+    updated: function updated(id) {
+      axios.put('/master/officer/' + id, {}).then(function (response) {});
+    },
+    deleted: function deleted(id) {
+      axios["delete"]('/master/officer/' + id, {}).then(function (response) {});
+    },
     cleared: function cleared() {
       this.form.name = '';
       this.form.phone = '';
@@ -2174,10 +2178,10 @@ __webpack_require__.r(__webpack_exports__);
         _this.cleared();
       });
     },
-    updated: function updated() {
+    updated: function updated(id) {
       var _this2 = this;
 
-      axios.put('/master/doctor', {
+      axios.put('/master/doctor/' + id, {
         name: this.form.name,
         phone: this.form.phone
       }).then(function (response) {
@@ -2186,7 +2190,9 @@ __webpack_require__.r(__webpack_exports__);
         _this2.cleared();
       });
     },
-    deleted: function deleted() {},
+    deleted: function deleted() {
+      axios["delete"]('/master/doctor/' + id, {}).then(function (response) {});
+    },
     cleared: function cleared() {
       this.form.name = '';
       this.form.phone = '';
@@ -2523,6 +2529,50 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -39729,9 +39779,105 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card" }, [
+      _c("div", { staticClass: "card-body login-card-body" }, [
+        _c("p", { staticClass: "login-box-msg" }, [
+          _vm._v("Sign in to start your session")
+        ]),
+        _vm._v(" "),
+        _c("form", [
+          _c("div", { staticClass: "input-group mb-3" }, [
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                type: "email",
+                placeholder: "Email",
+                name: "email",
+                value: "",
+                required: "",
+                autocomplete: "email",
+                autofocus: ""
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "input-group-append" }, [
+              _c("div", { staticClass: "input-group-text" }, [
+                _c("span", { staticClass: "fas fa-envelope" })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "input-group mb-3" }, [
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                type: "password",
+                placeholder: "Password",
+                name: "password",
+                required: "",
+                autocomplete: "current-password"
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "input-group-append" }, [
+              _c("div", { staticClass: "input-group-text" }, [
+                _c("span", { staticClass: "fas fa-lock" })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-8" }, [
+              _c("div", { staticClass: "icheck-primary" }, [
+                _c("input", {
+                  attrs: { type: "checkbox", id: "remember", name: "remember" }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "remember" } }, [
+                  _vm._v(
+                    "\n                            Remember Me\n                        "
+                  )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-4" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-success btn-block",
+                  attrs: { type: "submit" }
+                },
+                [_vm._v("Sign In")]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "mb-1" }, [
+          _c("a", { staticClass: "text-success", attrs: { href: "#" } }, [
+            _vm._v("I forgot my password")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "mb-0" }, [
+          _c(
+            "a",
+            { staticClass: "text-center text-success", attrs: { href: "#" } },
+            [_vm._v("Register a new membership")]
+          )
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -53070,6 +53216,21 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
+
+Vue.component('component-login', __webpack_require__(/*! ./components/LoginComponent.vue */ "./resources/js/components/LoginComponent.vue")["default"]);
+Vue.component('component-registration', __webpack_require__(/*! ./components/RegistrationComponent.vue */ "./resources/js/components/RegistrationComponent.vue")["default"]);
+Vue.component('component-appointment', __webpack_require__(/*! ./components/AppointmentComponent.vue */ "./resources/js/components/AppointmentComponent.vue")["default"]);
+Vue.component('component-officer', __webpack_require__(/*! ./components/OfficerComponent.vue */ "./resources/js/components/OfficerComponent.vue")["default"]);
+Vue.component('component-fee', __webpack_require__(/*! ./components/FeeComponent.vue */ "./resources/js/components/FeeComponent.vue")["default"]);
+Vue.component('component-doctor', __webpack_require__(/*! ./components/DoctorComponent.vue */ "./resources/js/components/DoctorComponent.vue")["default"]);
+Vue.component('component-patient', __webpack_require__(/*! ./components/PatientComponent.vue */ "./resources/js/components/PatientComponent.vue")["default"]);
+Vue.component('component-medical', __webpack_require__(/*! ./components/MedicalComponent.vue */ "./resources/js/components/MedicalComponent.vue")["default"]);
+Vue.component('component-letter', __webpack_require__(/*! ./components/LetterComponent.vue */ "./resources/js/components/LetterComponent.vue")["default"]);
+Vue.component('component-supplier', __webpack_require__(/*! ./components/SupplierComponent.vue */ "./resources/js/components/SupplierComponent.vue")["default"]);
+Vue.component('component-treatment', __webpack_require__(/*! ./components/TreatmentComponent.vue */ "./resources/js/components/TreatmentComponent.vue")["default"]);
+Vue.component('component-item', __webpack_require__(/*! ./components/ItemComponent.vue */ "./resources/js/components/ItemComponent.vue")["default"]);
+Vue.component('component-diagnosis', __webpack_require__(/*! ./components/DiagnosisComponent.vue */ "./resources/js/components/DiagnosisComponent.vue")["default"]);
+Vue.component('component-billing', __webpack_require__(/*! ./components/BillingComponent.vue */ "./resources/js/components/BillingComponent.vue")["default"]);
 
 var files = __webpack_require__("./resources/js sync recursive \\.vue$/");
 

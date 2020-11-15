@@ -69,8 +69,8 @@
                     this.cleared();
                 });
             },
-            updated() {
-                axios.put('/master/doctor', {
+            updated(id) {
+                axios.put('/master/doctor/' + id, {
                     name: this.form.name,
                     phone: this.form.phone
                 })
@@ -80,7 +80,12 @@
                 });
             },
             deleted() {
-                
+                axios.delete('/master/doctor/' + id, {
+
+                })
+                .then(response => {
+
+                });
             },
             cleared() {
                 this.form.name = '';

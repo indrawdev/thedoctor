@@ -15,6 +15,20 @@ window.Vue = require('vue');
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
+Vue.component('component-login', require('./components/LoginComponent.vue').default);
+Vue.component('component-registration', require('./components/RegistrationComponent.vue').default);
+Vue.component('component-appointment', require('./components/AppointmentComponent.vue').default);
+Vue.component('component-officer', require('./components/OfficerComponent.vue').default);
+Vue.component('component-fee', require('./components/FeeComponent.vue').default);
+Vue.component('component-doctor', require('./components/DoctorComponent.vue').default);
+Vue.component('component-patient', require('./components/PatientComponent.vue').default);
+Vue.component('component-medical', require('./components/MedicalComponent.vue').default);
+Vue.component('component-letter', require('./components/LetterComponent.vue').default);
+Vue.component('component-supplier', require('./components/SupplierComponent.vue').default);
+Vue.component('component-treatment', require('./components/TreatmentComponent.vue').default);
+Vue.component('component-item', require('./components/ItemComponent.vue').default);
+Vue.component('component-diagnosis', require('./components/DiagnosisComponent.vue').default);
+Vue.component('component-billing', require('./components/BillingComponent.vue').default);
 
 const files = require.context('./', true, /\.vue$/i)
 files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))

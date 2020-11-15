@@ -14,6 +14,8 @@ class ClinicSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('clinics')->delete();
+
         DB::table('clinics')->insert([
             [
                 'user_id' => 1,
@@ -22,6 +24,14 @@ class ClinicSeeder extends Seeder
                 'address' => 'Jl. Banten No. 81B, Jagakarsa, Jakarta Selatan',
                 'phone' => '085294076828',
                 'email' => 'untung@gmail.com'
+            ],
+            [
+                'user_id' => 1,
+                'name' => 'dr. Nana',
+                'slug' => 'dr-nana',
+                'address' => 'Jl. Banten No. 81B, Jagakarsa, Jakarta Selatan',
+                'phone' => '085294076820',
+                'email' => 'nana@gmail.com'
             ]
         ]);
     }
